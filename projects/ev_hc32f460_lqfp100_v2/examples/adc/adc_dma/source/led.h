@@ -1,0 +1,11 @@
+#ifndef _LED_H_
+#define _LED_H_
+
+
+void all_led_off(void);
+
+void led_red_on(void);
+
+
+#endif /* _LED_H_ */
+

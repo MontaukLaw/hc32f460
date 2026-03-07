@@ -1,0 +1,9 @@
+.\uvtest.o: ..\source\matlab\src\uvtest.c
+.\uvtest.o: ..\source\matlab\inc\uvtest.h
+.\uvtest.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\uvtest.o: ..\source\matlab\inc\rtwtypes.h
+.\uvtest.o: ..\source\matlab\inc\uvtest_types.h
+.\uvtest.o: ..\source\matlab\inc\rtGetInf.h
+.\uvtest.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\uvtest.o: ..\source\matlab\inc\rt_nonfinite.h
+.\uvtest.o: ..\source\matlab\inc\uvtest_private.h

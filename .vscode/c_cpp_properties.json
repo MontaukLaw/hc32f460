@@ -1,0 +1,31 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "ARM-GCC",
+            "compilerPath": "C:\\Program Files (x86)\\GNU Arm Embedded Toolchain\\10 2021.10\\bin\\arm-none-eabi-gcc.exe",
+
+            "intelliSenseMode": "gcc-arm",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/drivers/cmsis/Include",
+                "${workspaceFolder}/drivers/cmsis/Device/HDSC/hc32f4xx/include",
+                "${workspaceFolder}/drivers/hc32_ll_driver/inc",
+                
+                // ARM GCC 标准库
+                "C:\\Program Files (x86)\\GNU Arm Embedded Toolchain\\10 2021.10\\arm-none-eabi\\include\\",
+                "C:\\Keil_v5\\ARM\\PACK\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include",
+                // "D:\\work\\LEISAI\\HC32L13x_DDL_Rev2.2.0\\driver\\inc",
+                // "D:\\work\\LEISAI\\HC32L13x_DDL_Rev2.2.0\\mcu\\common"
+
+            ],
+
+            "defines": [
+                "LL_ADC_ENABLE",
+            ]
+        }
+    ]
+}

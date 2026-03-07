@@ -1,0 +1,16 @@
+.\output\debug\tasks.o: ..\source\freertos\src\tasks.c
+.\output\debug\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\debug\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\debug\tasks.o: ..\source\freertos\inc\FreeRTOS.h
+.\output\debug\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\tasks.o: ..\source\freertos\inc\FreeRTOSConfig.h
+.\output\debug\tasks.o: ..\source\freertos\inc\projdefs.h
+.\output\debug\tasks.o: ..\source\freertos\inc\portable.h
+.\output\debug\tasks.o: ..\source\freertos\inc\deprecated_definitions.h
+.\output\debug\tasks.o: ..\source\freertos\inc\portmacro.h
+.\output\debug\tasks.o: ..\source\freertos\inc\mpu_wrappers.h
+.\output\debug\tasks.o: ..\source\freertos\inc\task.h
+.\output\debug\tasks.o: ..\source\freertos\inc\list.h
+.\output\debug\tasks.o: ..\source\freertos\inc\timers.h
+.\output\debug\tasks.o: ..\source\freertos\inc\StackMacros.h

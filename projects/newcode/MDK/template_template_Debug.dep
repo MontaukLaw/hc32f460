@@ -1,0 +1,164 @@
+Dependencies for Project 'template', Target 'template_Debug': (DO NOT MODIFY !)
+CompilerVersion: 5060422::V5.06 update 4 (build 422)::ARMCC
+F (.\startup_hc32f46x.s)(0x67062ECD)(--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include--pd "__UVISION_VERSION SETA 541" --pd "_RTE_ SETA 1" --pd "NO_CRP SETA 1"--list .\output\debug\startup_hc32f46x.lst --xref -o .\startup_hc32f46x.o --depend .\startup_hc32f46x.d)
+F (..\..\..\mcu\common\system_hc32f46x.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\system_hc32f46x.o --omf_browse .\system_hc32f46x.crf --depend .\system_hc32f46x.d)
+F (..\source\main.c)(0x69A64DC3)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (..\source\app\inc\allinc.h)(0x67062ECD)
+F (..\source\app\src\app_gpio.c)(0x69A56435)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\app_gpio.o --omf_browse .\app_gpio.crf --depend .\app_gpio.d)
+I (..\source\app\inc\allinc.h)(0x67062ECD)
+F (..\source\ddl_config.h)(0x67062ECD)()
+F (..\source\app\src\app_adc.c)(0x69A52F7E)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\app_adc.o --omf_browse .\app_adc.crf --depend .\app_adc.d)
+I (..\source\app\inc\allinc.h)(0x67062ECD)
+F (..\source\app\src\app_uart.c)(0x69A52F54)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\app_uart.o --omf_browse .\app_uart.crf --depend .\app_uart.d)
+I (..\source\app\inc\allinc.h)(0x67062ECD)
+F (..\source\app\src\app.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\app.o --omf_browse .\app.crf --depend .\app.d)
+F (..\source\app\src\app_wdt.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\app_wdt.o --omf_browse .\app_wdt.crf --depend .\app_wdt.d)
+I (..\source\app\inc\allinc.h)(0x67062ECD)
+F (..\..\..\driver\src\hc32f46x_utility.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_utility.o --omf_browse .\hc32f46x_utility.crf --depend .\hc32f46x_utility.d)
+F (..\..\..\driver\src\hc32f46x_gpio.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_gpio.o --omf_browse .\hc32f46x_gpio.crf --depend .\hc32f46x_gpio.d)
+F (..\..\..\driver\src\hc32f46x_clk.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_clk.o --omf_browse .\hc32f46x_clk.crf --depend .\hc32f46x_clk.d)
+F (..\..\..\driver\src\hc32f46x_efm.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_efm.o --omf_browse .\hc32f46x_efm.crf --depend .\hc32f46x_efm.d)
+F (..\..\..\driver\src\hc32f46x_usart.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_usart.o --omf_browse .\hc32f46x_usart.crf --depend .\hc32f46x_usart.d)
+F (..\..\..\driver\src\hc32f46x_interrupts.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_interrupts.o --omf_browse .\hc32f46x_interrupts.crf --depend .\hc32f46x_interrupts.d)
+F (..\..\..\driver\src\hc32f46x_pwc.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_pwc.o --omf_browse .\hc32f46x_pwc.crf --depend .\hc32f46x_pwc.d)
+F (..\..\..\driver\src\hc32f46x_dmac.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_dmac.o --omf_browse .\hc32f46x_dmac.crf --depend .\hc32f46x_dmac.d)
+F (..\..\..\driver\src\hc32f46x_timer6.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_timer6.o --omf_browse .\hc32f46x_timer6.crf --depend .\hc32f46x_timer6.d)
+F (..\..\..\driver\src\hc32f46x_adc.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_adc.o --omf_browse .\hc32f46x_adc.crf --depend .\hc32f46x_adc.d)
+F (..\..\..\driver\src\hc32f46x_exint_nmi_swi.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_exint_nmi_swi.o --omf_browse .\hc32f46x_exint_nmi_swi.crf --depend .\hc32f46x_exint_nmi_swi.d)
+F (..\..\..\driver\src\hc32f46x_wdt.c)(0x00000000)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\hc32f46x_wdt.o --omf_browse .\hc32f46x_wdt.crf --depend .\hc32f46x_wdt.d)
+F (..\source\freertos\src\croutine.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\croutine.o --omf_browse .\croutine.crf --depend .\croutine.d)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+I (..\source\freertos\inc\croutine.h)(0x67062ECD)
+F (..\source\freertos\src\event_groups.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\event_groups.o --omf_browse .\event_groups.crf --depend .\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+I (..\source\freertos\inc\timers.h)(0x67062ECD)
+I (..\source\freertos\inc\event_groups.h)(0x67062ECD)
+F (..\source\freertos\src\heap_4.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\heap_4.o --omf_browse .\heap_4.crf --depend .\heap_4.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+F (..\source\freertos\src\list.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\list.o --omf_browse .\list.crf --depend .\list.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+F (..\source\freertos\src\port.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\port.o --omf_browse .\port.crf --depend .\port.d)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+F (..\source\freertos\src\queue.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\queue.o --omf_browse .\queue.crf --depend .\queue.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+I (..\source\freertos\inc\queue.h)(0x67062ECD)
+F (..\source\freertos\src\tasks.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\tasks.o --omf_browse .\tasks.crf --depend .\tasks.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+I (..\source\freertos\inc\timers.h)(0x67062ECD)
+I (..\source\freertos\inc\StackMacros.h)(0x67062ECD)
+F (..\source\freertos\src\timers.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\timers.o --omf_browse .\timers.crf --depend .\timers.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOS.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (..\source\freertos\inc\FreeRTOSConfig.h)(0x67062ECD)
+I (..\source\freertos\inc\projdefs.h)(0x67062ECD)
+I (..\source\freertos\inc\portable.h)(0x67062ECD)
+I (..\source\freertos\inc\deprecated_definitions.h)(0x67062ECD)
+I (..\source\freertos\inc\portmacro.h)(0x67062ECD)
+I (..\source\freertos\inc\mpu_wrappers.h)(0x67062ECD)
+I (..\source\freertos\inc\task.h)(0x67062ECD)
+I (..\source\freertos\inc\list.h)(0x67062ECD)
+I (..\source\freertos\inc\queue.h)(0x67062ECD)
+I (..\source\freertos\inc\timers.h)(0x67062ECD)
+F (..\source\matlab\src\rt_nonfinite.c)(0x670F2895)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\rt_nonfinite.o --omf_browse .\rt_nonfinite.crf --depend .\rt_nonfinite.d)
+I (..\source\matlab\inc\rt_nonfinite.h)(0x670F2895)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\source\matlab\inc\rtwtypes.h)(0x670F2895)
+I (..\source\matlab\inc\rtGetNaN.h)(0x670F2895)
+I (..\source\matlab\inc\rtGetInf.h)(0x670F2895)
+F (..\source\matlab\src\rtGetInf.c)(0x670F2895)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\rtgetinf.o --omf_browse .\rtgetinf.crf --depend .\rtgetinf.d)
+I (..\source\matlab\inc\rtGetInf.h)(0x670F2895)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\source\matlab\inc\rtwtypes.h)(0x670F2895)
+I (..\source\matlab\inc\rt_nonfinite.h)(0x670F2895)
+F (..\source\matlab\src\rtGetNaN.c)(0x670F2895)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\rtgetnan.o --omf_browse .\rtgetnan.crf --depend .\rtgetnan.d)
+I (..\source\matlab\inc\rtGetNaN.h)(0x670F2895)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\source\matlab\inc\rtwtypes.h)(0x670F2895)
+I (..\source\matlab\inc\rt_nonfinite.h)(0x670F2895)
+F (..\source\matlab\src\uvtest.c)(0x67062ECD)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\source\freertos\inc -I ..\source\app\inc -I ..\..\..\driver\inc -I ..\source\matlab\inc --diag_suppress=186,66-I.\RTE\_template_Debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\HDSC\HC32F460\1.0.11\Device\Include-D__UVISION_VERSION="541" -D_RTE_ -D__DEBUG -DHC32F46x -DUSE_DEVICE_DRIVER_LIB-o .\uvtest.o --omf_browse .\uvtest.crf --depend .\uvtest.d)
+I (..\source\matlab\inc\uvtest.h)(0x67062ECD)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (..\source\matlab\inc\rtwtypes.h)(0x670F2895)
+I (..\source\matlab\inc\uvtest_types.h)(0x67062ECD)
+I (..\source\matlab\inc\rtGetInf.h)(0x670F2895)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (..\source\matlab\inc\rt_nonfinite.h)(0x670F2895)
+I (..\source\matlab\inc\uvtest_private.h)(0x67062ECD)
