@@ -129,4 +129,53 @@
 /* Application frame length max definition */
 #define APP_FRAME_LEN_MAX (500U)
 
+#define ADC_UNIT (CM_ADC1)
+
+#define ADC_PERIPH_CLK (FCG3_PERIPH_ADC1)
+/* --- single channel --- */
+#define ADC_CHX (ADC_CH9)
+#define ADC_CHX_PORT (GPIO_PORT_B)
+#define ADC_CHX_PIN (GPIO_PIN_01)
+#define ADC_SEQ (ADC_SEQ_A)
+
+/* DR for this channel */
+#define ADC_DR_ADDR ((uint32_t)&ADC_UNIT->DR9) // CH9 -> DR9（按你示例习惯）
+
+/* ring buffer length */
+#define ADC_BUF_LEN (10U) // 10个样本的缓冲区
+#define ADC_DMA_SRC_ADDR (ADC_DR_ADDR)
+#define ADC_DMA_TRANS_CNT (0)  // always
+#define ADC_DMA_BLOCK_SIZE (1U) // ★每次触发搬1个
+#define ADC_DMA_DATA_WIDTH (DMA_DATAWIDTH_16BIT)
+#define ADC_DMA_DEST_ADDR ((uint32_t)(&m_au16AdcBuf[0U]))
+#define ADC_DMA_TRIG_EVT (EVT_SRC_ADC1_EOCA)
+
+#define ADC_DMA_UNIT (CM_DMA1)
+#define ADC_DMA_PERIPH_CLK (FCG0_PERIPH_DMA1)
+#define ADC_DMA_CH (DMA_CH2)
+#define ADC_DMA_AOS_TRIG_SEL (AOS_DMA1_2)
+
+#define ADC_DMA_INT_TYPE (DMA_INT_BTC_CH2)
+#define ADC_DMA_INT_SRC (INT_SRC_DMA1_BTC2)
+#define ADC_DMA_INT_IRQn (INT038_IRQn)
+
+#define ADC_DMA_INT_PRIO (DDL_IRQ_PRIO_03)
+#define ADC_DMA_INT_FLAG (DMA_FLAG_BTC_CH2)
+
+#define INPUT_CH_NUMBER 16
+
+#define ADC_CHANNEL_NUMBER 16
+
+#define MAX_CHANNELS INPUT_CH_NUMBER
+
+#define ADC_BUFFER_SIZE ADC_BUF_LEN // 80 // 10 // Define the size of the ADC buffer
+
+#define TOTAL_POINTS (INPUT_CH_NUMBER * ADC_CHANNEL_NUMBER) // 256
+
+// 点数量加上帧尾, 加左右两边帧头
+// 16个字节的MEMS数据
+#define OLD_FRAME_LEN (TOTAL_POINTS + 8 + 4 + 16)
+
+#define USE_PRESS 0
+
 #endif /* _USER_DEFINE_H_ */

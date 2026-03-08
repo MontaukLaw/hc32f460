@@ -78,6 +78,9 @@
 #define BL_LOW_POWER_PORT (GPIO_PORT_B)
 #define BL_LOW_POWER_PIN (GPIO_PIN_07)
 
+#define BL_LINK_PORT (GPIO_PORT_B)
+#define BL_LINK_PIN (GPIO_PIN_06)
+
 // uint8_t u8Port, uint16_t u16Pin,
 typedef struct
 {

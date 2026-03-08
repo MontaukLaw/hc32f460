@@ -3,10 +3,12 @@
 
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "main.h"
 
 #include "hc32_ll_gpio.h"
+#include "hc32_ll_def.h"
 #include "hc32f4xx_conf.h"
 #include "sys.h"
 #include "hc32_ll_clk.h"
@@ -22,5 +24,11 @@
 #include "sw4067.h"
 #include "led.h"
 #include "uart_app.h"
+#include "bl.h"
+#include "test.h"
+#include "comm.h"
+#include "app.h"
+#include "app_adc.h"
+#include "device_define.h"
 
 #endif /* _USER_COMM_H_ */

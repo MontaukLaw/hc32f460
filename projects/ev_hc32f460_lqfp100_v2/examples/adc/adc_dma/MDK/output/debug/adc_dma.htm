@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\debug\adc_dma.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\debug\adc_dma.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sat Mar 07 16:49:29 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sun Mar 08 16:02:55 2026
 <BR><P>
 <H3>Maximum Stack Usage =        344 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -19,7 +19,6 @@ Mutually Recursive functions
  <LI><a href="#[6]">SVC_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[6]">SVC_Handler</a><BR>
  <LI><a href="#[7]">DebugMon_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[7]">DebugMon_Handler</a><BR>
  <LI><a href="#[8]">PendSV_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8]">PendSV_Handler</a><BR>
- <LI><a href="#[9]">SysTick_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[9]">SysTick_Handler</a><BR>
  <LI><a href="#[8a]">IRQ128_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[8a]">IRQ128_Handler</a><BR>
 </UL>
 <P>
@@ -27,6 +26,7 @@ Mutually Recursive functions
 Function Pointers
 </H3><UL>
  <LI><a href="#[4]">BusFault_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
+ <LI><a href="#[9f]">DMA_IrqCallback</a> from app_adc.o(i.DMA_IrqCallback) referenced from app_adc.o(i.DmaIrqConfig)
  <LI><a href="#[7]">DebugMon_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[2]">HardFault_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[a]">IRQ000_Handler</a> from hc32_ll_interrupts.o(i.IRQ000_Handler) referenced from startup_hc32f460.o(RESET)
@@ -177,22 +177,23 @@ Function Pointers
  <LI><a href="#[1]">NMI_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[8]">PendSV_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[9d]">RX_DMA_TC_IrqCallback</a> from uart4_app.o(i.RX_DMA_TC_IrqCallback) referenced from uart4_app.o(i.DMA_Config)
- <LI><a href="#[a0]">RX_DMA_TC_IrqCallback</a> from uart2_app.o(i.RX_DMA_TC_IrqCallback) referenced from uart2_app.o(i.u2_DMA_Config)
+ <LI><a href="#[a2]">RX_DMA_TC_IrqCallback</a> from uart2_app.o(i.RX_DMA_TC_IrqCallback) referenced from uart2_app.o(i.u2_DMA_Config)
  <LI><a href="#[0]">Reset_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
- <LI><a href="#[9]">SysTick_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
+ <LI><a href="#[9]">SysTick_Handler</a> from main.o(i.SysTick_Handler) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[9b]">SystemInit</a> from system_hc32f460.o(i.SystemInit) referenced from startup_hc32f460.o(.text)
  <LI><a href="#[9e]">TX_DMA_TC_IrqCallback</a> from uart4_app.o(i.TX_DMA_TC_IrqCallback) referenced from uart4_app.o(i.DMA_Config)
- <LI><a href="#[a1]">TX_DMA_TC_IrqCallback</a> from uart2_app.o(i.TX_DMA_TC_IrqCallback) referenced from uart2_app.o(i.u2_DMA_Config)
- <LI><a href="#[a3]">USART_RxError_IrqCallback</a> from uart2_app.o(i.USART_RxError_IrqCallback) referenced from uart2_app.o(i.uart2_init)
- <LI><a href="#[a6]">USART_RxError_IrqCallback</a> from uart4_app.o(i.USART_RxError_IrqCallback) referenced from uart4_app.o(i.uart4_init)
- <LI><a href="#[a4]">USART_RxTimeout_IrqCallback</a> from uart2_app.o(i.USART_RxTimeout_IrqCallback) referenced from uart2_app.o(i.uart2_init)
- <LI><a href="#[a7]">USART_RxTimeout_IrqCallback</a> from uart4_app.o(i.USART_RxTimeout_IrqCallback) referenced from uart4_app.o(i.uart4_init)
- <LI><a href="#[a2]">USART_TxComplete_IrqCallback</a> from uart2_app.o(i.USART_TxComplete_IrqCallback) referenced from uart2_app.o(i.uart2_init)
- <LI><a href="#[a5]">USART_TxComplete_IrqCallback</a> from uart4_app.o(i.USART_TxComplete_IrqCallback) referenced from uart4_app.o(i.uart4_init)
+ <LI><a href="#[a3]">TX_DMA_TC_IrqCallback</a> from uart2_app.o(i.TX_DMA_TC_IrqCallback) referenced from uart2_app.o(i.u2_DMA_Config)
+ <LI><a href="#[a5]">USART_RxError_IrqCallback</a> from uart2_app.o(i.USART_RxError_IrqCallback) referenced from uart2_app.o(i.uart2_init)
+ <LI><a href="#[a8]">USART_RxError_IrqCallback</a> from uart4_app.o(i.USART_RxError_IrqCallback) referenced from uart4_app.o(i.uart4_init)
+ <LI><a href="#[a6]">USART_RxTimeout_IrqCallback</a> from uart2_app.o(i.USART_RxTimeout_IrqCallback) referenced from uart2_app.o(i.uart2_init)
+ <LI><a href="#[a9]">USART_RxTimeout_IrqCallback</a> from uart4_app.o(i.USART_RxTimeout_IrqCallback) referenced from uart4_app.o(i.uart4_init)
+ <LI><a href="#[a4]">USART_TxComplete_IrqCallback</a> from uart2_app.o(i.USART_TxComplete_IrqCallback) referenced from uart2_app.o(i.uart2_init)
+ <LI><a href="#[a7]">USART_TxComplete_IrqCallback</a> from uart4_app.o(i.USART_TxComplete_IrqCallback) referenced from uart4_app.o(i.uart4_init)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_hc32f460.o(.text) referenced from startup_hc32f460.o(RESET)
  <LI><a href="#[9c]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_hc32f460.o(.text)
- <LI><a href="#[9f]">fputc</a> from hc32_ll_utility.o(i.fputc) referenced from printf3.o(i.__0printf$3)
+ <LI><a href="#[a1]">_sputc</a> from printf3.o(i._sputc) referenced from printf3.o(i.__0sprintf$3)
+ <LI><a href="#[a0]">fputc</a> from hc32_ll_utility.o(i.fputc) referenced from printf3.o(i.__0printf$3)
  <LI><a href="#[9a]">main</a> from main.o(i.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P>
@@ -202,25 +203,25 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(.text)
 </UL>
-<P><STRONG><a name="[12f]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[153]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
-<P><STRONG><a name="[aa]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[ad]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[b6]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
-<BR><BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<P><STRONG><a name="[bb]"></a>__main_after_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[130]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[154]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[131]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[155]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[132]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[156]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[133]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[157]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[134]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[158]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, startup_hc32f460.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
@@ -281,13 +282,6 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
 </UL>
-<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_hc32f460.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
-</UL>
 <P><STRONG><a name="[8a]"></a>IRQ128_Handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_hc32f460.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IRQ128_Handler
 </UL>
@@ -340,633 +334,709 @@ Global Symbols
 <P><STRONG><a name="[99]"></a>IRQ143_Handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_hc32f460.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
 </UL>
-<P><STRONG><a name="[ac]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
+<P><STRONG><a name="[af]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
-</UL>
-
-<P><STRONG><a name="[12e]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
 
-<P><STRONG><a name="[135]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[13b]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fill_tx_data
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+</UL>
 
-<P><STRONG><a name="[136]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[159]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[af]"></a>__aeabi_ui2d</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, dfltui.o(.text))
+<P><STRONG><a name="[15a]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+
+<P><STRONG><a name="[12b]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;self_cmd_handler
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_at_mac
+</UL>
+
+<P><STRONG><a name="[14a]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = memcmp
+</UL>
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;self_cmd_handler
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_handler_bl
+</UL>
+
+<P><STRONG><a name="[b2]"></a>__aeabi_ui2d</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, dfltui.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __aeabi_ui2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
 
-<P><STRONG><a name="[b1]"></a>__aeabi_ul2d</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, dfltul.o(.text))
+<P><STRONG><a name="[b4]"></a>__aeabi_ul2d</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, dfltul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
-</UL>
-
-<P><STRONG><a name="[b2]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_d2f
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
-</UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
 
-<P><STRONG><a name="[c1]"></a>ADC_StructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_adc.o(i.ADC_StructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<P><STRONG><a name="[b1]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[137]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[15b]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
-<P><STRONG><a name="[138]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[15c]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, iusefp.o(.text), UNUSED)
 
-<P><STRONG><a name="[b4]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text))
+<P><STRONG><a name="[15d]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+
+<P><STRONG><a name="[b5]"></a>led_task</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, led.o(i.led_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = led_task &rArr; led_ctl &rArr; led_blue_on &rArr; all_led_off &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_ctl
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[b7]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_ddiv &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
-</UL>
-
-<P><STRONG><a name="[139]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
-
-<P><STRONG><a name="[119]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
 
-<P><STRONG><a name="[ae]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<P><STRONG><a name="[b9]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_d2f
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
+</UL>
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
 
-<P><STRONG><a name="[13a]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[15e]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
-<P><STRONG><a name="[ad]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<P><STRONG><a name="[127]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[13b]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
-
-<P><STRONG><a name="[b3]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<P><STRONG><a name="[b0]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[13c]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text), UNUSED)
+<P><STRONG><a name="[15f]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[b5]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text))
+<P><STRONG><a name="[ba]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+</UL>
+
+<P><STRONG><a name="[160]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text), UNUSED)
+
+<P><STRONG><a name="[b8]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[b0]"></a>_double_epilogue</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, depilogue.o(.text))
+<P><STRONG><a name="[b3]"></a>_double_epilogue</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-</UL>
-
-<P><STRONG><a name="[ab]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
-</UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 </UL>
 
-<P><STRONG><a name="[13d]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[ae]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
+</UL>
 
-<P><STRONG><a name="[b7]"></a>ADC_ChCmd</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, hc32_ll_adc.o(i.ADC_ChCmd))
+<P><STRONG><a name="[161]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+
+<P><STRONG><a name="[bc]"></a>ADC_ChCmd</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, hc32_ll_adc.o(i.ADC_ChCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ADC_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[b8]"></a>ADC_ClearStatus</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_ClearStatus))
+<P><STRONG><a name="[bd]"></a>ADC_ClearStatus</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_ClearStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ADC_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[b9]"></a>ADC_Init</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_Init))
+<P><STRONG><a name="[be]"></a>ADC_Init</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ADC_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[ba]"></a>ADC_IntCmd</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_IntCmd))
+<P><STRONG><a name="[bf]"></a>ADC_IntCmd</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_IntCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ADC_IntCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[bb]"></a>ADC_SetSampleTime</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, hc32_ll_adc.o(i.ADC_SetSampleTime))
+<P><STRONG><a name="[c0]"></a>ADC_SetSampleTime</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, hc32_ll_adc.o(i.ADC_SetSampleTime))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = ADC_SetSampleTime &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[bc]"></a>ADC_Start</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_Start))
+<P><STRONG><a name="[c1]"></a>ADC_Start</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, hc32_ll_adc.o(i.ADC_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ADC_Start &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
 </UL>
 
-<P><STRONG><a name="[bd]"></a>AOS_SetTriggerEventSrc</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, hc32_ll_aos.o(i.AOS_SetTriggerEventSrc))
+<P><STRONG><a name="[c7]"></a>ADC_StructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_adc.o(i.ADC_StructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+</UL>
+
+<P><STRONG><a name="[c2]"></a>AOS_SetTriggerEventSrc</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, hc32_ll_aos.o(i.AOS_SetTriggerEventSrc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = AOS_SetTriggerEventSrc &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[a9]"></a>BSP_KEY_KEY10_IrqHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, ev_hc32f460_lqfp100_v2.o(i.BSP_KEY_KEY10_IrqHandler), UNUSED, KEPT)
+<P><STRONG><a name="[c3]"></a>AdcConfig</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, app_adc.o(i.AdcConfig))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = AdcConfig &rArr; adcDmaConfig &rArr; DMA_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Start
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[ac]"></a>BSP_KEY_KEY10_IrqHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, ev_hc32f460_lqfp100_v2.o(i.BSP_KEY_KEY10_IrqHandler), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BSP_KEY_KEY10_IrqHandler &rArr; GPIO_ReadInputPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTINT_ClearExtIntStatus
+<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTINT_ClearExtIntStatus
 </UL>
 
-<P><STRONG><a name="[c7]"></a>CLK_GetClockFreq</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_GetClockFreq))
+<P><STRONG><a name="[cd]"></a>CLK_GetClockFreq</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_GetClockFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = CLK_GetClockFreq &rArr; GetClockFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetClockFreq
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetClockFreq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c9]"></a>CLK_GetStableStatus</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, hc32_ll_clk.o(i.CLK_GetStableStatus))
+<P><STRONG><a name="[cf]"></a>CLK_GetStableStatus</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, hc32_ll_clk.o(i.CLK_GetStableStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
+<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
 </UL>
 
-<P><STRONG><a name="[ca]"></a>CLK_HrcCmd</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_HrcCmd))
+<P><STRONG><a name="[d0]"></a>CLK_HrcCmd</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_HrcCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CLK_HrcCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[cc]"></a>CLK_LrcCmd</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_LrcCmd))
+<P><STRONG><a name="[d2]"></a>CLK_LrcCmd</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_LrcCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = CLK_LrcCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[ce]"></a>CLK_PLLCmd</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_PLLCmd))
+<P><STRONG><a name="[d4]"></a>CLK_PLLCmd</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_PLLCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CLK_PLLCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
 </UL>
 
-<P><STRONG><a name="[cf]"></a>CLK_PLLInit</STRONG> (Thumb, 596 bytes, Stack size 24 bytes, hc32_ll_clk.o(i.CLK_PLLInit))
+<P><STRONG><a name="[d5]"></a>CLK_PLLInit</STRONG> (Thumb, 596 bytes, Stack size 24 bytes, hc32_ll_clk.o(i.CLK_PLLInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = CLK_PLLInit &rArr; CLK_PLLCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
-</UL>
-
-<P><STRONG><a name="[101]"></a>CLK_PLLStructInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, hc32_ll_clk.o(i.CLK_PLLStructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
+<BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
 </UL>
 
-<P><STRONG><a name="[d0]"></a>CLK_SetClockDiv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_SetClockDiv))
+<P><STRONG><a name="[10a]"></a>CLK_PLLStructInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, hc32_ll_clk.o(i.CLK_PLLStructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
+</UL>
+
+<P><STRONG><a name="[d6]"></a>CLK_SetClockDiv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_SetClockDiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CLK_SetClockDiv &rArr; SetSysClockDiv &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[d3]"></a>CLK_SetSysClockSrc</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hc32_ll_clk.o(i.CLK_SetSysClockSrc))
+<P><STRONG><a name="[d9]"></a>CLK_SetSysClockSrc</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, hc32_ll_clk.o(i.CLK_SetSysClockSrc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = CLK_SetSysClockSrc &rArr; SetSysClockSrc &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[d5]"></a>CLK_XtalCmd</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_XtalCmd))
+<P><STRONG><a name="[db]"></a>CLK_XtalCmd</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_XtalCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = CLK_XtalCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_WaitStable
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
 </UL>
 
-<P><STRONG><a name="[d6]"></a>CLK_XtalInit</STRONG> (Thumb, 272 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_XtalInit))
+<P><STRONG><a name="[dc]"></a>CLK_XtalInit</STRONG> (Thumb, 272 bytes, Stack size 16 bytes, hc32_ll_clk.o(i.CLK_XtalInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = CLK_XtalInit &rArr; CLK_XtalCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
-</UL>
-
-<P><STRONG><a name="[116]"></a>CLK_XtalStructInit</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, hc32_ll_clk.o(i.CLK_XtalStructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
+<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
 </UL>
 
-<P><STRONG><a name="[a8]"></a>DDL_AssertHandler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, hc32_ll_utility.o(i.DDL_AssertHandler))
+<P><STRONG><a name="[123]"></a>CLK_XtalStructInit</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, hc32_ll_clk.o(i.CLK_XtalStructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
+</UL>
+
+<P><STRONG><a name="[ab]"></a>DDL_AssertHandler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, hc32_ll_utility.o(i.DDL_AssertHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Start
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetCountValue
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_GetCountValue
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_DeInit
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SRAM_SetWaitCycle
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AnalogCmd
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_SetWaitCycle
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetDebugPort
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_TogglePins
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg3PeriphClockCmd
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Start
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetSampleTime
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IntCmd
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ClearStatus
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ChCmd
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetStableStatus
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetPeriodValue
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTINT_ClearExtIntStatus
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetDestAddr
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_TogglePins
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Start
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetCountValue
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_GetCountValue
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_DeInit
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SRAM_SetWaitCycle
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AnalogCmd
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_SetWaitCycle
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetDebugPort
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg3PeriphClockCmd
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_RepeatInit
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Start
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetSampleTime
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IntCmd
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ClearStatus
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ChCmd
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_WriteData
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetStatus
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetStableStatus
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetPeriodValue
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTINT_ClearExtIntStatus
 </UL>
 
-<P><STRONG><a name="[11f]"></a>DDL_ConsoleOutputChar</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, hc32_ll_utility.o(i.DDL_ConsoleOutputChar))
+<P><STRONG><a name="[13c]"></a>DDL_ConsoleOutputChar</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, hc32_ll_utility.o(i.DDL_ConsoleOutputChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = DDL_ConsoleOutputChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
-<P><STRONG><a name="[cd]"></a>DDL_DelayUS</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, hc32_ll_utility.o(i.DDL_DelayUS))
+<P><STRONG><a name="[d3]"></a>DDL_DelayUS</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, hc32_ll_utility.o(i.DDL_DelayUS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DDL_DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
+<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockSrc
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockDiv
 </UL>
 
-<P><STRONG><a name="[d9]"></a>DMA_ChCmd</STRONG> (Thumb, 454 bytes, Stack size 32 bytes, hc32_ll_dma.o(i.DMA_ChCmd))
+<P><STRONG><a name="[df]"></a>DMA_ChCmd</STRONG> (Thumb, 454 bytes, Stack size 32 bytes, hc32_ll_dma.o(i.DMA_ChCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = DMA_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[da]"></a>DMA_ClearTransCompleteStatus</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ClearTransCompleteStatus))
+<P><STRONG><a name="[e0]"></a>DMA_ClearTransCompleteStatus</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ClearTransCompleteStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_ClearTransCompleteStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DmaIrqConfig
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_IrqCallback
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
 </UL>
 
-<P><STRONG><a name="[db]"></a>DMA_Cmd</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_Cmd))
+<P><STRONG><a name="[e1]"></a>DMA_Cmd</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_Cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_Cmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[e9]"></a>DMA_GetTransCount</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_GetTransCount))
+<P><STRONG><a name="[ef]"></a>DMA_GetTransCount</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_GetTransCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_GetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
 </UL>
 
-<P><STRONG><a name="[df]"></a>DMA_Init</STRONG> (Thumb, 382 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_Init))
+<P><STRONG><a name="[e5]"></a>DMA_Init</STRONG> (Thumb, 382 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[e1]"></a>DMA_LlpInit</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_LlpInit))
+<P><STRONG><a name="[e7]"></a>DMA_LlpInit</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_LlpInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_LlpInit &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
-</UL>
-
-<P><STRONG><a name="[e0]"></a>DMA_LlpStructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_dma.o(i.DMA_LlpStructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[e3]"></a>DMA_ReconfigCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ReconfigCmd))
+<P><STRONG><a name="[e6]"></a>DMA_LlpStructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_dma.o(i.DMA_LlpStructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+</UL>
+
+<P><STRONG><a name="[e9]"></a>DMA_ReconfigCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ReconfigCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_ReconfigCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[e2]"></a>DMA_ReconfigLlpCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ReconfigLlpCmd))
+<P><STRONG><a name="[e8]"></a>DMA_ReconfigLlpCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_ReconfigLlpCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_ReconfigLlpCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[ea]"></a>DMA_SetSrcAddr</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_SetSrcAddr))
+<P><STRONG><a name="[f0]"></a>DMA_RepeatInit</STRONG> (Thumb, 208 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_RepeatInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_RepeatInit &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+</UL>
+
+<P><STRONG><a name="[f1]"></a>DMA_SetDestAddr</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_SetDestAddr))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_SetDestAddr &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
+</UL>
+
+<P><STRONG><a name="[f2]"></a>DMA_SetSrcAddr</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, hc32_ll_dma.o(i.DMA_SetSrcAddr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_SetSrcAddr &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
 </UL>
 
-<P><STRONG><a name="[eb]"></a>DMA_SetTransCount</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, hc32_ll_dma.o(i.DMA_SetTransCount))
+<P><STRONG><a name="[f3]"></a>DMA_SetTransCount</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, hc32_ll_dma.o(i.DMA_SetTransCount))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
-</UL>
-
-<P><STRONG><a name="[de]"></a>DMA_StructInit</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, hc32_ll_dma.o(i.DMA_StructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
 </UL>
 
-<P><STRONG><a name="[e8]"></a>DMA_TransCompleteIntCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_TransCompleteIntCmd))
+<P><STRONG><a name="[e4]"></a>DMA_StructInit</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, hc32_ll_dma.o(i.DMA_StructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+</UL>
+
+<P><STRONG><a name="[ee]"></a>DMA_TransCompleteIntCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_dma.o(i.DMA_TransCompleteIntCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = DMA_TransCompleteIntCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[ec]"></a>DelayUs_Init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, sys.o(i.DelayUs_Init))
+<P><STRONG><a name="[f4]"></a>DelayUs_Init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, sys.o(i.DelayUs_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = DelayUs_Init &rArr; TMRA_Init &rArr; TMRA_SetPeriodValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_StructInit
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Start
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetCountValue
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_DeInit
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_StructInit
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Start
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetCountValue
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_DeInit
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f3]"></a>EFM_SetWaitCycle</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, hc32_ll_efm.o(i.EFM_SetWaitCycle))
+<P><STRONG><a name="[fc]"></a>EFM_SetWaitCycle</STRONG> (Thumb, 126 bytes, Stack size 16 bytes, hc32_ll_efm.o(i.EFM_SetWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = EFM_SetWaitCycle &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[c6]"></a>EXTINT_ClearExtIntStatus</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, hc32_ll_interrupts.o(i.EXTINT_ClearExtIntStatus), UNUSED, KEPT)
+<P><STRONG><a name="[cc]"></a>EXTINT_ClearExtIntStatus</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, hc32_ll_interrupts.o(i.EXTINT_ClearExtIntStatus), UNUSED, KEPT)
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = EXTINT_ClearExtIntStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_KEY_KEY10_IrqHandler
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_KEY_KEY10_IrqHandler
 </UL>
 
-<P><STRONG><a name="[dd]"></a>FCG_Fcg0PeriphClockCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg0PeriphClockCmd))
+<P><STRONG><a name="[e3]"></a>FCG_Fcg0PeriphClockCmd</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg0PeriphClockCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = FCG_Fcg0PeriphClockCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[f4]"></a>FCG_Fcg1PeriphClockCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg1PeriphClockCmd))
+<P><STRONG><a name="[fd]"></a>FCG_Fcg1PeriphClockCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg1PeriphClockCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = FCG_Fcg1PeriphClockCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[ed]"></a>FCG_Fcg2PeriphClockCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg2PeriphClockCmd))
+<P><STRONG><a name="[f5]"></a>FCG_Fcg2PeriphClockCmd</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg2PeriphClockCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = FCG_Fcg2PeriphClockCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
+<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
 </UL>
 
-<P><STRONG><a name="[c0]"></a>FCG_Fcg3PeriphClockCmd</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg3PeriphClockCmd))
+<P><STRONG><a name="[c6]"></a>FCG_Fcg3PeriphClockCmd</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, hc32_ll_fcg.o(i.FCG_Fcg3PeriphClockCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = FCG_Fcg3PeriphClockCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
 </UL>
 
-<P><STRONG><a name="[f5]"></a>GPIO_AnalogCmd</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, hc32_ll_gpio.o(i.GPIO_AnalogCmd))
+<P><STRONG><a name="[fe]"></a>GPIO_AnalogCmd</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, hc32_ll_gpio.o(i.GPIO_AnalogCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GPIO_AnalogCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
+<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
 </UL>
 
-<P><STRONG><a name="[c4]"></a>GPIO_Init</STRONG> (Thumb, 464 bytes, Stack size 40 bytes, hc32_ll_gpio.o(i.GPIO_Init))
+<P><STRONG><a name="[ca]"></a>GPIO_Init</STRONG> (Thumb, 464 bytes, Stack size 40 bytes, hc32_ll_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
+<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
 </UL>
 
-<P><STRONG><a name="[c5]"></a>GPIO_ReadInputPins</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_ReadInputPins), UNUSED, KEPT)
+<P><STRONG><a name="[cb]"></a>GPIO_ReadInputPins</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_ReadInputPins))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO_ReadInputPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_KEY_KEY10_IrqHandler
+<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_link_status_check
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_KEY_KEY10_IrqHandler
 </UL>
 
-<P><STRONG><a name="[f6]"></a>GPIO_ResetPins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_ResetPins))
+<P><STRONG><a name="[ff]"></a>GPIO_ResetPins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_ResetPins))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO_ResetPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blue_on
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_adc_ch
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_output
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
 </UL>
 
-<P><STRONG><a name="[f7]"></a>GPIO_SetDebugPort</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_SetDebugPort))
+<P><STRONG><a name="[100]"></a>GPIO_SetDebugPort</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_SetDebugPort))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO_SetDebugPort &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
 </UL>
 
-<P><STRONG><a name="[f8]"></a>GPIO_SetFunc</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, hc32_ll_gpio.o(i.GPIO_SetFunc))
+<P><STRONG><a name="[101]"></a>GPIO_SetFunc</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, hc32_ll_gpio.o(i.GPIO_SetFunc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GPIO_SetFunc &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[f9]"></a>GPIO_SetPins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_SetPins))
+<P><STRONG><a name="[102]"></a>GPIO_SetPins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_SetPins))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_off
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
-</UL>
-
-<P><STRONG><a name="[c3]"></a>GPIO_StructInit</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, hc32_ll_gpio.o(i.GPIO_StructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_off
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_adc_ch
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_output
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
 </UL>
 
-<P><STRONG><a name="[fa]"></a>GPIO_TogglePins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_TogglePins))
+<P><STRONG><a name="[c9]"></a>GPIO_StructInit</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, hc32_ll_gpio.o(i.GPIO_StructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
+</UL>
+
+<P><STRONG><a name="[103]"></a>GPIO_TogglePins</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, hc32_ll_gpio.o(i.GPIO_TogglePins))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = GPIO_TogglePins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;blink_blue
 </UL>
 
-<P><STRONG><a name="[e4]"></a>INTC_IrqSignIn</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, hc32_ll_interrupts.o(i.INTC_IrqSignIn))
+<P><STRONG><a name="[ea]"></a>INTC_IrqSignIn</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, hc32_ll_interrupts.o(i.INTC_IrqSignIn))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = INTC_IrqSignIn &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DmaIrqConfig
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
 <P><STRONG><a name="[a]"></a>IRQ000_Handler</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, hc32_ll_interrupts.o(i.IRQ000_Handler))
@@ -1609,750 +1679,1026 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
 </UL>
-<P><STRONG><a name="[fb]"></a>LED_Init</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, app_gpio.o(i.LED_Init))
+<P><STRONG><a name="[104]"></a>LED_Init</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, app_gpio.o(i.LED_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = LED_Init &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fc]"></a>LL_PERIPH_WE</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, hc32_ll.o(i.LL_PERIPH_WE))
+<P><STRONG><a name="[105]"></a>LL_PERIPH_WE</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, hc32_ll.o(i.LL_PERIPH_WE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_PERIPH_WE
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_REG_Unlock
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_REG_Unlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fe]"></a>LL_PERIPH_WP</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, hc32_ll.o(i.LL_PERIPH_WP))
+<P><STRONG><a name="[107]"></a>LL_PERIPH_WP</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, hc32_ll.o(i.LL_PERIPH_WP))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_PERIPH_WP
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_REG_Lock
+<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_REG_Lock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[102]"></a>PWC_HighSpeedToHighPerformance</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, hc32_ll_pwc.o(i.PWC_HighSpeedToHighPerformance))
+<P><STRONG><a name="[10b]"></a>PWC_HighSpeedToHighPerformance</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, hc32_ll_pwc.o(i.PWC_HighSpeedToHighPerformance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PWC_HighSpeedToHighPerformance &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[104]"></a>SRAM_SetWaitCycle</STRONG> (Thumb, 182 bytes, Stack size 32 bytes, hc32_ll_sram.o(i.SRAM_SetWaitCycle))
+<P><STRONG><a name="[10d]"></a>SRAM_SetWaitCycle</STRONG> (Thumb, 182 bytes, Stack size 32 bytes, hc32_ll_sram.o(i.SRAM_SetWaitCycle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SRAM_SetWaitCycle &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[d2]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, system_hc32f460.o(i.SystemCoreClockUpdate))
+<P><STRONG><a name="[12e]"></a>SysTick_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, hc32_ll_utility.o(i.SysTick_GetTick))
+<BR><BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;blink_blue
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_task
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_link_status_check
+</UL>
+
+<P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, main.o(i.SysTick_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
+</UL>
+<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_IncTick
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(RESET)
+</UL>
+<P><STRONG><a name="[10f]"></a>SysTick_IncTick</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, hc32_ll_utility.o(i.SysTick_IncTick))
+<BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
+</UL>
+
+<P><STRONG><a name="[144]"></a>SysTick_Init</STRONG> (Thumb, 122 bytes, Stack size 20 bytes, hc32_ll_utility.o(i.SysTick_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SysTick_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[d8]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, system_hc32f460.o(i.SystemCoreClockUpdate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SystemCoreClockUpdate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
+<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
 <P><STRONG><a name="[9b]"></a>SystemInit</STRONG> (Thumb, 28 bytes, Stack size 4 bytes, system_hc32f460.o(i.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SystemInit &rArr; SystemCoreClockUpdate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_hc32f460.o(.text)
 </UL>
-<P><STRONG><a name="[109]"></a>TMR0_HWClearCondCmd</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hc32_ll_tmr0.o(i.TMR0_HWClearCondCmd))
+<P><STRONG><a name="[113]"></a>TMR0_HWClearCondCmd</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hc32_ll_tmr0.o(i.TMR0_HWClearCondCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMR0_HWClearCondCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
+<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
 </UL>
 
-<P><STRONG><a name="[108]"></a>TMR0_HWStartCondCmd</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hc32_ll_tmr0.o(i.TMR0_HWStartCondCmd))
+<P><STRONG><a name="[112]"></a>TMR0_HWStartCondCmd</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, hc32_ll_tmr0.o(i.TMR0_HWStartCondCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMR0_HWStartCondCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
+<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
 </UL>
 
-<P><STRONG><a name="[107]"></a>TMR0_Init</STRONG> (Thumb, 284 bytes, Stack size 32 bytes, hc32_ll_tmr0.o(i.TMR0_Init))
+<P><STRONG><a name="[111]"></a>TMR0_Init</STRONG> (Thumb, 284 bytes, Stack size 32 bytes, hc32_ll_tmr0.o(i.TMR0_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TMR0_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
+<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
 </UL>
 
-<P><STRONG><a name="[ef]"></a>TMRA_DeInit</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, hc32_ll_tmra.o(i.TMRA_DeInit))
+<P><STRONG><a name="[f7]"></a>TMRA_DeInit</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, hc32_ll_tmra.o(i.TMRA_DeInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TMRA_DeInit &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
 </UL>
 
-<P><STRONG><a name="[10a]"></a>TMRA_GetCountValue</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, hc32_ll_tmra.o(i.TMRA_GetCountValue))
+<P><STRONG><a name="[114]"></a>TMRA_GetCountValue</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, hc32_ll_tmra.o(i.TMRA_GetCountValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TMRA_GetCountValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
 
-<P><STRONG><a name="[f0]"></a>TMRA_Init</STRONG> (Thumb, 346 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_Init))
+<P><STRONG><a name="[f8]"></a>TMRA_Init</STRONG> (Thumb, 346 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TMRA_Init &rArr; TMRA_SetPeriodValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetPeriodValue
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_SetPeriodValue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
 </UL>
 
-<P><STRONG><a name="[f1]"></a>TMRA_SetCountValue</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_SetCountValue))
+<P><STRONG><a name="[f9]"></a>TMRA_SetCountValue</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_SetCountValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMRA_SetCountValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
 </UL>
 
-<P><STRONG><a name="[10b]"></a>TMRA_SetPeriodValue</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_SetPeriodValue))
+<P><STRONG><a name="[115]"></a>TMRA_SetPeriodValue</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, hc32_ll_tmra.o(i.TMRA_SetPeriodValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TMRA_SetPeriodValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_Init
 </UL>
 
-<P><STRONG><a name="[f2]"></a>TMRA_Start</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, hc32_ll_tmra.o(i.TMRA_Start))
+<P><STRONG><a name="[fa]"></a>TMRA_Start</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, hc32_ll_tmra.o(i.TMRA_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TMRA_Start &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
-</UL>
-
-<P><STRONG><a name="[ee]"></a>TMRA_StructInit</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, hc32_ll_tmra.o(i.TMRA_StructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
 </UL>
 
-<P><STRONG><a name="[10d]"></a>USART_ClearStatus</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, hc32_ll_usart.o(i.USART_ClearStatus))
+<P><STRONG><a name="[f6]"></a>TMRA_StructInit</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, hc32_ll_tmra.o(i.TMRA_StructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+</UL>
+
+<P><STRONG><a name="[117]"></a>USART_ClearStatus</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, hc32_ll_usart.o(i.USART_ClearStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USART_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart2_SendByte
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
 </UL>
 
-<P><STRONG><a name="[103]"></a>USART_FuncCmd</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, hc32_ll_usart.o(i.USART_FuncCmd))
+<P><STRONG><a name="[10c]"></a>USART_FuncCmd</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, hc32_ll_usart.o(i.USART_FuncCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_TxComplete_IrqCallback
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_TxComplete_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_TxComplete_IrqCallback
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart4
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart2
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart4
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart2
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_send_str_sync
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_TxComplete_IrqCallback
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TX_DMA_TC_IrqCallback
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RX_DMA_TC_IrqCallback
 </UL>
 
-<P><STRONG><a name="[110]"></a>USART_ReadData</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, hc32_ll_usart.o(i.USART_ReadData))
+<P><STRONG><a name="[118]"></a>USART_GetStatus</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, hc32_ll_usart.o(i.USART_GetStatus))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USART_GetStatus &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart2_SendByte
+</UL>
+
+<P><STRONG><a name="[11b]"></a>USART_ReadData</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, hc32_ll_usart.o(i.USART_ReadData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = USART_ReadData &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxError_IrqCallback
 </UL>
 
-<P><STRONG><a name="[113]"></a>USART_SetBaudrate</STRONG> (Thumb, 230 bytes, Stack size 48 bytes, hc32_ll_usart.o(i.USART_SetBaudrate))
+<P><STRONG><a name="[11e]"></a>USART_SetBaudrate</STRONG> (Thumb, 230 bytes, Stack size 48 bytes, hc32_ll_usart.o(i.USART_SetBaudrate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = USART_SetBaudrate &rArr; SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CalculateBrr
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SmartCard_CalculateBrr
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockSync_CalculateBrr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
+<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
 </UL>
 
-<P><STRONG><a name="[114]"></a>USART_UART_Init</STRONG> (Thumb, 436 bytes, Stack size 32 bytes, hc32_ll_usart.o(i.USART_UART_Init))
+<P><STRONG><a name="[11f]"></a>USART_UART_Init</STRONG> (Thumb, 436 bytes, Stack size 32 bytes, hc32_ll_usart.o(i.USART_UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = USART_UART_Init &rArr; USART_SetBaudrate &rArr; SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-</UL>
-
-<P><STRONG><a name="[12d]"></a>USART_UART_StructInit</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, hc32_ll_usart.o(i.USART_UART_StructInit))
-<BR><BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[117]"></a>__0printf$3</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[151]"></a>USART_UART_StructInit</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, hc32_ll_usart.o(i.USART_UART_StructInit))
+<BR><BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[13e]"></a>__1printf$3</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
+<P><STRONG><a name="[120]"></a>USART_WriteData</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, hc32_ll_usart.o(i.USART_WriteData))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = USART_WriteData &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+</UL>
+<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart2_SendByte
+</UL>
 
-<P><STRONG><a name="[d8]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3))
+<P><STRONG><a name="[124]"></a>__0printf$3</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[162]"></a>__1printf$3</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3), UNUSED)
+
+<P><STRONG><a name="[de]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0printf$3))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
 </UL>
 
-<P><STRONG><a name="[13f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[126]"></a>__0sprintf$3</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printf3.o(i.__0sprintf$3), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
 
-<P><STRONG><a name="[140]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[163]"></a>__1sprintf$3</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0sprintf$3), UNUSED)
 
-<P><STRONG><a name="[11a]"></a>all_led_off</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, led.o(i.all_led_off))
+<P><STRONG><a name="[12a]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf3.o(i.__0sprintf$3))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2sprintf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_at_mac
+</UL>
+
+<P><STRONG><a name="[164]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+
+<P><STRONG><a name="[165]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+
+<P><STRONG><a name="[148]"></a>adc_data_handler_with_idx</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, app.o(i.adc_data_handler_with_idx))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = adc_data_handler_with_idx
+</UL>
+<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
+</UL>
+
+<P><STRONG><a name="[128]"></a>all_led_off</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, led.o(i.all_led_off))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = all_led_off &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
 </UL>
-<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
+<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blue_on
 </UL>
 
-<P><STRONG><a name="[11b]"></a>delay_ms</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, sys.o(i.delay_ms))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = delay_ms &rArr; delay_us &rArr; TMRA_GetCountValue &rArr; DDL_AssertHandler &rArr; __2printf
+<P><STRONG><a name="[129]"></a>bl_at_mac</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, bl.o(i.bl_at_mac))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = bl_at_mac &rArr; uart4_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_bl_mac
+</UL>
+
+<P><STRONG><a name="[12d]"></a>bl_link_status_check</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, bl.o(i.bl_link_status_check))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = bl_link_status_check &rArr; get_bl_mac &rArr; bl_at_mac &rArr; uart4_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_GetTick
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputPins
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_bl_mac
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11c]"></a>delay_us</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, sys.o(i.delay_us))
+<P><STRONG><a name="[130]"></a>bl_task</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, bl.o(i.bl_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = bl_task &rArr; re_config_u4_rx_dma &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u4_rx_dma
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_handler_bl
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[133]"></a>ble_task</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, bl.o(i.ble_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = ble_task &rArr; uart4_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_GetTick
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[134]"></a>blink_blue</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, led.o(i.blink_blue))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = blink_blue &rArr; GPIO_TogglePins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_GetTick
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_TogglePins
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_ctl
+</UL>
+
+<P><STRONG><a name="[135]"></a>com_task</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, comm.o(i.com_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = com_task &rArr; self_cmd_handler &rArr; u2_send_str_sync &rArr; Uart2_SendByte &rArr; USART_WriteData &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;self_cmd_handler
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;re_config_u2_rx_dma
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[137]"></a>delay_us</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, sys.o(i.delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = delay_us &rArr; TMRA_GetCountValue &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_GetCountValue
+<BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMRA_GetCountValue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
 </UL>
 
-<P><STRONG><a name="[11d]"></a>enable_uart2</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart2_app.o(i.enable_uart2))
+<P><STRONG><a name="[138]"></a>enable_uart2</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart2_app.o(i.enable_uart2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = enable_uart2 &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11e]"></a>enable_uart4</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart4_app.o(i.enable_uart4))
+<P><STRONG><a name="[139]"></a>enable_uart4</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart4_app.o(i.enable_uart4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = enable_uart4 &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9f]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, hc32_ll_utility.o(i.fputc))
+<P><STRONG><a name="[13a]"></a>fill_tx_data</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, app.o(i.fill_tx_data))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = fill_tx_data
+</UL>
+<BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[a0]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, hc32_ll_utility.o(i.fputc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = fputc &rArr; DDL_ConsoleOutputChar
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_ConsoleOutputChar
+<BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_ConsoleOutputChar
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf3.o(i.__0printf$3)
 </UL>
-<P><STRONG><a name="[120]"></a>gpio_init</STRONG> (Thumb, 140 bytes, Stack size 32 bytes, app_gpio.o(i.gpio_init))
+<P><STRONG><a name="[12f]"></a>get_bl_mac</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, bl.o(i.get_bl_mac))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = get_bl_mac &rArr; bl_at_mac &rArr; uart4_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_at_mac
+</UL>
+<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_link_status_check
+</UL>
+
+<P><STRONG><a name="[13d]"></a>gpio_init</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, app_gpio.o(i.gpio_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = gpio_init &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetDebugPort
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetDebugPort
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[121]"></a>init_clock</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, clock_app.o(i.init_clock))
+<P><STRONG><a name="[13e]"></a>init_clock</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, clock_app.o(i.init_clock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = init_clock &rArr; MPLLInit &rArr; CLK_PLLInit &rArr; CLK_PLLCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SRAM_SetWaitCycle
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_SetWaitCycle
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
+<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SRAM_SetWaitCycle
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWC_HighSpeedToHighPerformance
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EFM_SetWaitCycle
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_LrcCmd
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XtalInit
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPLLInit
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[122]"></a>led_red_on</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, led.o(i.led_red_on))
+<P><STRONG><a name="[13f]"></a>led_blue_on</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, led.o(i.led_blue_on))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = led_blue_on &rArr; all_led_off &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_off
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_ctl
+</UL>
+
+<P><STRONG><a name="[b6]"></a>led_ctl</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, led.o(i.led_ctl))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = led_ctl &rArr; led_blue_on &rArr; all_led_off &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_blue_on
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;blink_blue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_task
+</UL>
+
+<P><STRONG><a name="[140]"></a>led_red_on</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, led.o(i.led_red_on))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = led_red_on &rArr; all_led_off &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_off
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+<BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;all_led_off
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[123]"></a>led_test</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, app_gpio.o(i.led_test))
+<P><STRONG><a name="[141]"></a>led_test</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, app_gpio.o(i.led_test))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = led_test &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9a]"></a>main</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, main.o(i.main))
+<P><STRONG><a name="[9a]"></a>main</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = main &rArr; uart4_init &rArr; USART_UART_Init &rArr; USART_SetBaudrate &rArr; SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_send_data
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
-<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart4
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart2
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_TogglePins
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetClockFreq
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
+<BR>[Calls]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_test
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_task
+<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fill_tx_data
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart4
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_uart2
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;com_task
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_task
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_task
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_link_status_check
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Init
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUs_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetClockFreq
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[125]"></a>uart2_init</STRONG> (Thumb, 246 bytes, Stack size 56 bytes, uart2_app.o(i.uart2_init))
+<P><STRONG><a name="[145]"></a>main_task_adc_first</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, app.o(i.main_task_adc_first))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main_task_adc_first &rArr; uart_send &rArr; uart2_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_adc_ch
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_output
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_data_handler_with_idx
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[136]"></a>re_config_u2_rx_dma</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, uart2_app.o(i.re_config_u2_rx_dma))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = re_config_u2_rx_dma &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetDestAddr
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;com_task
+</UL>
+
+<P><STRONG><a name="[132]"></a>re_config_u4_rx_dma</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, uart4_app.o(i.re_config_u4_rx_dma))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = re_config_u4_rx_dma &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetDestAddr
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_task
+</UL>
+
+<P><STRONG><a name="[131]"></a>recv_handler_bl</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, bl.o(i.recv_handler_bl))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = recv_handler_bl &rArr; memcmp
+</UL>
+<BR>[Calls]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+</UL>
+<BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_task
+</UL>
+
+<P><STRONG><a name="[aa]"></a>self_cmd_handler</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, comm.o(i.self_cmd_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = self_cmd_handler &rArr; u2_send_str_sync &rArr; Uart2_SendByte &rArr; USART_WriteData &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_send_str_sync
+<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;memcmp
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+</UL>
+<BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;com_task
+</UL>
+
+<P><STRONG><a name="[147]"></a>set_adc_ch</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, sw4067.o(i.set_adc_ch))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = set_adc_ch &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+</UL>
+<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
+</UL>
+
+<P><STRONG><a name="[146]"></a>set_output</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, app_gpio.o(i.set_output))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = set_output &rArr; GPIO_SetPins &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetPins
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetPins
+</UL>
+<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
+</UL>
+
+<P><STRONG><a name="[14b]"></a>u2_send_str_sync</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, uart2_app.o(i.u2_send_str_sync))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = u2_send_str_sync &rArr; Uart2_SendByte &rArr; USART_WriteData &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart2_SendByte
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;self_cmd_handler
+</UL>
+
+<P><STRONG><a name="[142]"></a>uart2_init</STRONG> (Thumb, 246 bytes, Stack size 56 bytes, uart2_app.o(i.uart2_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = uart2_init &rArr; USART_UART_Init &rArr; USART_SetBaudrate &rArr; SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_StructInit
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_TMR0_Config
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_StructInit
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[127]"></a>uart2_send_data</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, uart2_app.o(i.uart2_send_data))
+<P><STRONG><a name="[152]"></a>uart2_send_data</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, uart2_app.o(i.uart2_send_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = uart2_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_send
 </UL>
 
-<P><STRONG><a name="[124]"></a>uart4_init</STRONG> (Thumb, 250 bytes, Stack size 56 bytes, uart4_app.o(i.uart4_init))
+<P><STRONG><a name="[143]"></a>uart4_init</STRONG> (Thumb, 250 bytes, Stack size 56 bytes, uart4_app.o(i.uart4_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312<LI>Call Chain = uart4_init &rArr; USART_UART_Init &rArr; USART_SetBaudrate &rArr; SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_StructInit
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetFunc
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg1PeriphClockCmd
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Config
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_red_on
+<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_StructInit
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_UART_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[126]"></a>uart4_send_data</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, uart4_app.o(i.uart4_send_data))
+<P><STRONG><a name="[12c]"></a>uart4_send_data</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, uart4_app.o(i.uart4_send_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = uart4_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetTransCount
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetSrcAddr
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_task
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bl_at_mac
+</UL>
+
+<P><STRONG><a name="[149]"></a>uart_send</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, app.o(i.uart_send))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = uart_send &rArr; uart2_send_data &rArr; DMA_SetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_send_data
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task_adc_first
 </UL>
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[be]"></a>AdcConfig</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.AdcConfig))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = AdcConfig &rArr; AdcInitConfig &rArr; AdcSetPinAnalogMode &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Start
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[bf]"></a>AdcInitConfig</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, main.o(i.AdcInitConfig))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = AdcInitConfig &rArr; AdcSetPinAnalogMode &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg3PeriphClockCmd
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_StructInit
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetSampleTime
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IntCmd
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ClearStatus
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ChCmd
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
-</UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
-</UL>
-
-<P><STRONG><a name="[c2]"></a>AdcSetPinAnalogMode</STRONG> (Thumb, 32 bytes, Stack size 24 bytes, main.o(i.AdcSetPinAnalogMode))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = AdcSetPinAnalogMode &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
-</UL>
-
-<P><STRONG><a name="[100]"></a>MPLLInit</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, clock_app.o(i.MPLLInit))
+<P><STRONG><a name="[109]"></a>MPLLInit</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, clock_app.o(i.MPLLInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = MPLLInit &rArr; CLK_PLLInit &rArr; CLK_PLLCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLStructInit
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLStructInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[115]"></a>XtalInit</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, clock_app.o(i.XtalInit))
+<P><STRONG><a name="[122]"></a>XtalInit</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, clock_app.o(i.XtalInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = XtalInit &rArr; CLK_XtalInit &rArr; CLK_XtalCmd &rArr; CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AnalogCmd
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalStructInit
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
+<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AnalogCmd
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalStructInit
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
+<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_clock
 </UL>
 
-<P><STRONG><a name="[dc]"></a>DMA_Config</STRONG> (Thumb, 426 bytes, Stack size 64 bytes, uart4_app.o(i.DMA_Config))
+<P><STRONG><a name="[e2]"></a>DMA_Config</STRONG> (Thumb, 414 bytes, Stack size 64 bytes, uart4_app.o(i.DMA_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = DMA_Config &rArr; DMA_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpStructInit
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_StructInit
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_StructInit
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpStructInit
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
 </UL>
 
 <P><STRONG><a name="[9d]"></a>RX_DMA_TC_IrqCallback</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, uart4_app.o(i.RX_DMA_TC_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = RX_DMA_TC_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart4_app.o(i.DMA_Config)
 </UL>
-<P><STRONG><a name="[106]"></a>TMR0_Config</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, uart4_app.o(i.TMR0_Config))
+<P><STRONG><a name="[110]"></a>TMR0_Config</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, uart4_app.o(i.TMR0_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = TMR0_Config &rArr; TMR0_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
 </UL>
 
 <P><STRONG><a name="[9e]"></a>TX_DMA_TC_IrqCallback</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, uart4_app.o(i.TX_DMA_TC_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TX_DMA_TC_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart4_app.o(i.DMA_Config)
 </UL>
-<P><STRONG><a name="[a6]"></a>USART_RxError_IrqCallback</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart4_app.o(i.USART_RxError_IrqCallback))
+<P><STRONG><a name="[a8]"></a>USART_RxError_IrqCallback</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart4_app.o(i.USART_RxError_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxError_IrqCallback &rArr; USART_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart4_app.o(i.uart4_init)
 </UL>
-<P><STRONG><a name="[a7]"></a>USART_RxTimeout_IrqCallback</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, uart4_app.o(i.USART_RxTimeout_IrqCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxTimeout_IrqCallback &rArr; USART_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
+<P><STRONG><a name="[a9]"></a>USART_RxTimeout_IrqCallback</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, uart4_app.o(i.USART_RxTimeout_IrqCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxTimeout_IrqCallback &rArr; DMA_GetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_StopTimeoutTimer
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_StopTimeoutTimer
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart4_app.o(i.uart4_init)
 </UL>
-<P><STRONG><a name="[111]"></a>USART_StopTimeoutTimer</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, uart4_app.o(i.USART_StopTimeoutTimer))
+<P><STRONG><a name="[11c]"></a>USART_StopTimeoutTimer</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, uart4_app.o(i.USART_StopTimeoutTimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_StopTimeoutTimer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
 </UL>
 
-<P><STRONG><a name="[a5]"></a>USART_TxComplete_IrqCallback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart4_app.o(i.USART_TxComplete_IrqCallback))
+<P><STRONG><a name="[a7]"></a>USART_TxComplete_IrqCallback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart4_app.o(i.USART_TxComplete_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = USART_TxComplete_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart4_app.o(i.uart4_init)
 </UL>
-<P><STRONG><a name="[e5]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart4_app.o(i.__NVIC_ClearPendingIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<P><STRONG><a name="[eb]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart4_app.o(i.__NVIC_ClearPendingIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
 </UL>
 
-<P><STRONG><a name="[e7]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, uart4_app.o(i.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<P><STRONG><a name="[ed]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, uart4_app.o(i.__NVIC_EnableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
 </UL>
 
-<P><STRONG><a name="[e6]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, uart4_app.o(i.__NVIC_SetPriority))
+<P><STRONG><a name="[ec]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, uart4_app.o(i.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Config
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart4_init
 </UL>
 
-<P><STRONG><a name="[a0]"></a>RX_DMA_TC_IrqCallback</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, uart2_app.o(i.RX_DMA_TC_IrqCallback))
+<P><STRONG><a name="[a2]"></a>RX_DMA_TC_IrqCallback</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, uart2_app.o(i.RX_DMA_TC_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = RX_DMA_TC_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart2_app.o(i.u2_DMA_Config)
 </UL>
-<P><STRONG><a name="[a1]"></a>TX_DMA_TC_IrqCallback</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, uart2_app.o(i.TX_DMA_TC_IrqCallback))
+<P><STRONG><a name="[a3]"></a>TX_DMA_TC_IrqCallback</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, uart2_app.o(i.TX_DMA_TC_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TX_DMA_TC_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart2_app.o(i.u2_DMA_Config)
 </UL>
-<P><STRONG><a name="[a3]"></a>USART_RxError_IrqCallback</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart2_app.o(i.USART_RxError_IrqCallback))
+<P><STRONG><a name="[a5]"></a>USART_RxError_IrqCallback</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, uart2_app.o(i.USART_RxError_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxError_IrqCallback &rArr; USART_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReadData
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart2_app.o(i.uart2_init)
 </UL>
-<P><STRONG><a name="[a4]"></a>USART_RxTimeout_IrqCallback</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, uart2_app.o(i.USART_RxTimeout_IrqCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxTimeout_IrqCallback &rArr; USART_ClearStatus &rArr; DDL_AssertHandler &rArr; __2printf
+<P><STRONG><a name="[a6]"></a>USART_RxTimeout_IrqCallback</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, uart2_app.o(i.USART_RxTimeout_IrqCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_RxTimeout_IrqCallback &rArr; DMA_GetTransCount &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_StopTimeoutTimer
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
+<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_GetTransCount
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_StopTimeoutTimer
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart2_app.o(i.uart2_init)
 </UL>
-<P><STRONG><a name="[112]"></a>USART_StopTimeoutTimer</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, uart2_app.o(i.USART_StopTimeoutTimer))
+<P><STRONG><a name="[11d]"></a>USART_StopTimeoutTimer</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, uart2_app.o(i.USART_StopTimeoutTimer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_StopTimeoutTimer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_RxTimeout_IrqCallback
 </UL>
 
-<P><STRONG><a name="[a2]"></a>USART_TxComplete_IrqCallback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart2_app.o(i.USART_TxComplete_IrqCallback))
+<P><STRONG><a name="[a4]"></a>USART_TxComplete_IrqCallback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, uart2_app.o(i.USART_TxComplete_IrqCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = USART_TxComplete_IrqCallback &rArr; USART_FuncCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_FuncCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> uart2_app.o(i.uart2_init)
 </UL>
-<P><STRONG><a name="[129]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart2_app.o(i.__NVIC_ClearPendingIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<P><STRONG><a name="[121]"></a>Uart2_SendByte</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, uart2_app.o(i.Uart2_SendByte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Uart2_SendByte &rArr; USART_WriteData &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_WriteData
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetStatus
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ClearStatus
+</UL>
+<BR>[Called By]<UL><LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_send_str_sync
 </UL>
 
-<P><STRONG><a name="[12b]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, uart2_app.o(i.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<P><STRONG><a name="[14d]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, uart2_app.o(i.__NVIC_ClearPendingIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[12a]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, uart2_app.o(i.__NVIC_SetPriority))
+<P><STRONG><a name="[14f]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, uart2_app.o(i.__NVIC_EnableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+</UL>
+
+<P><STRONG><a name="[14e]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, uart2_app.o(i.__NVIC_SetPriority))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;u2_DMA_Config
 </UL>
 
-<P><STRONG><a name="[128]"></a>u2_DMA_Config</STRONG> (Thumb, 426 bytes, Stack size 64 bytes, uart2_app.o(i.u2_DMA_Config))
+<P><STRONG><a name="[14c]"></a>u2_DMA_Config</STRONG> (Thumb, 414 bytes, Stack size 64 bytes, uart2_app.o(i.u2_DMA_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = u2_DMA_Config &rArr; DMA_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpStructInit
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_StructInit
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_TransCompleteIntCmd
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_StructInit
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigLlpCmd
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ReconfigCmd
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpStructInit
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_LlpInit
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[12c]"></a>u2_TMR0_Config</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, uart2_app.o(i.u2_TMR0_Config))
+<P><STRONG><a name="[150]"></a>u2_TMR0_Config</STRONG> (Thumb, 130 bytes, Stack size 40 bytes, uart2_app.o(i.u2_TMR0_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = u2_TMR0_Config &rArr; TMR0_Init &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg2PeriphClockCmd
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_Init
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWStartCondCmd
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TMR0_HWClearCondCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
-</UL>
-
-<P><STRONG><a name="[ff]"></a>PWC_REG_Lock</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, hc32_ll.o(i.PWC_REG_Lock))
-<BR><BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 </UL>
 
-<P><STRONG><a name="[fd]"></a>PWC_REG_Unlock</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, hc32_ll.o(i.PWC_REG_Unlock))
-<BR><BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
+<P><STRONG><a name="[c4]"></a>AdcInitConfig</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, app_adc.o(i.AdcInitConfig))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = AdcInitConfig &rArr; AdcSetPinAnalogMode &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg3PeriphClockCmd
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_StructInit
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_SetSampleTime
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_IntCmd
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ClearStatus
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ChCmd
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcSetPinAnalogMode
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
 </UL>
 
-<P><STRONG><a name="[cb]"></a>CLK_WaitStable</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, hc32_ll_clk.o(i.CLK_WaitStable))
+<P><STRONG><a name="[c8]"></a>AdcSetPinAnalogMode</STRONG> (Thumb, 32 bytes, Stack size 24 bytes, app_adc.o(i.AdcSetPinAnalogMode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = AdcSetPinAnalogMode &rArr; GPIO_Init &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_StructInit
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcInitConfig
+</UL>
+
+<P><STRONG><a name="[9f]"></a>DMA_IrqCallback</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, app_adc.o(i.DMA_IrqCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA_IrqCallback &rArr; DMA_ClearTransCompleteStatus &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> app_adc.o(i.DmaIrqConfig)
+</UL>
+<P><STRONG><a name="[fb]"></a>DmaIrqConfig</STRONG> (Thumb, 130 bytes, Stack size 16 bytes, app_adc.o(i.DmaIrqConfig))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = DmaIrqConfig &rArr; INTC_IrqSignIn &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INTC_IrqSignIn
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ClearTransCompleteStatus
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adcDmaConfig
+</UL>
+
+<P><STRONG><a name="[c5]"></a>adcDmaConfig</STRONG> (Thumb, 126 bytes, Stack size 48 bytes, app_adc.o(i.adcDmaConfig))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = adcDmaConfig &rArr; DMA_ChCmd &rArr; DDL_AssertHandler &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FCG_Fcg0PeriphClockCmd
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_StructInit
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ChCmd
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AOS_SetTriggerEventSrc
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_RepeatInit
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DmaIrqConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AdcConfig
+</UL>
+
+<P><STRONG><a name="[108]"></a>PWC_REG_Lock</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, hc32_ll.o(i.PWC_REG_Lock))
+<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WP
+</UL>
+
+<P><STRONG><a name="[106]"></a>PWC_REG_Unlock</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, hc32_ll.o(i.PWC_REG_Unlock))
+<BR><BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_PERIPH_WE
+</UL>
+
+<P><STRONG><a name="[d1]"></a>CLK_WaitStable</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, hc32_ll_clk.o(i.CLK_WaitStable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CLK_WaitStable &rArr; CLK_GetStableStatus &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetStableStatus
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetStableStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_HrcCmd
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_XtalCmd
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_PLLCmd
 </UL>
 
-<P><STRONG><a name="[c8]"></a>GetClockFreq</STRONG> (Thumb, 252 bytes, Stack size 20 bytes, hc32_ll_clk.o(i.GetClockFreq))
+<P><STRONG><a name="[ce]"></a>GetClockFreq</STRONG> (Thumb, 252 bytes, Stack size 20 bytes, hc32_ll_clk.o(i.GetClockFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = GetClockFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetClockFreq
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_GetClockFreq
 </UL>
 
-<P><STRONG><a name="[d1]"></a>SetSysClockDiv</STRONG> (Thumb, 746 bytes, Stack size 32 bytes, hc32_ll_clk.o(i.SetSysClockDiv))
+<P><STRONG><a name="[d7]"></a>SetSysClockDiv</STRONG> (Thumb, 746 bytes, Stack size 32 bytes, hc32_ll_clk.o(i.SetSysClockDiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SetSysClockDiv &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetClockDiv
 </UL>
 
-<P><STRONG><a name="[d4]"></a>SetSysClockSrc</STRONG> (Thumb, 198 bytes, Stack size 32 bytes, hc32_ll_clk.o(i.SetSysClockSrc))
+<P><STRONG><a name="[da]"></a>SetSysClockSrc</STRONG> (Thumb, 198 bytes, Stack size 32 bytes, hc32_ll_clk.o(i.SetSysClockSrc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SetSysClockSrc &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
+<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLK_SetSysClockSrc
 </UL>
 
-<P><STRONG><a name="[d7]"></a>ClockSync_CalculateBrr</STRONG> (Thumb, 464 bytes, Stack size 104 bytes, hc32_ll_usart.o(i.ClockSync_CalculateBrr))
+<P><STRONG><a name="[dd]"></a>ClockSync_CalculateBrr</STRONG> (Thumb, 464 bytes, Stack size 104 bytes, hc32_ll_usart.o(i.ClockSync_CalculateBrr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = ClockSync_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
 
-<P><STRONG><a name="[105]"></a>SmartCard_CalculateBrr</STRONG> (Thumb, 568 bytes, Stack size 120 bytes, hc32_ll_usart.o(i.SmartCard_CalculateBrr))
+<P><STRONG><a name="[10e]"></a>SmartCard_CalculateBrr</STRONG> (Thumb, 568 bytes, Stack size 120 bytes, hc32_ll_usart.o(i.SmartCard_CalculateBrr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = SmartCard_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
 
-<P><STRONG><a name="[10c]"></a>UART_CalculateBrr</STRONG> (Thumb, 580 bytes, Stack size 112 bytes, hc32_ll_usart.o(i.UART_CalculateBrr))
+<P><STRONG><a name="[116]"></a>UART_CalculateBrr</STRONG> (Thumb, 580 bytes, Stack size 112 bytes, hc32_ll_usart.o(i.UART_CalculateBrr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = UART_CalculateBrr &rArr; __aeabi_ul2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
-</UL>
-
-<P><STRONG><a name="[10f]"></a>USART_GetBusClockFreq</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_usart.o(i.USART_GetBusClockFreq))
-<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
 
-<P><STRONG><a name="[10e]"></a>USART_GetUsartClockFreq</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, hc32_ll_usart.o(i.USART_GetUsartClockFreq))
+<P><STRONG><a name="[11a]"></a>USART_GetBusClockFreq</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, hc32_ll_usart.o(i.USART_GetBusClockFreq))
+<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetUsartClockFreq
+</UL>
+
+<P><STRONG><a name="[119]"></a>USART_GetUsartClockFreq</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, hc32_ll_usart.o(i.USART_GetUsartClockFreq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = USART_GetUsartClockFreq &rArr; DDL_AssertHandler &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetBusClockFreq
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DDL_AssertHandler
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetBusClockFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SetBaudrate
 </UL>
 
-<P><STRONG><a name="[118]"></a>_printf_core</STRONG> (Thumb, 436 bytes, Stack size 96 bytes, printf3.o(i._printf_core), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<P><STRONG><a name="[125]"></a>_printf_core</STRONG> (Thumb, 436 bytes, Stack size 96 bytes, printf3.o(i._printf_core), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$3
+<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf$3
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$3
 </UL>
-<P>
+
+<P><STRONG><a name="[a1]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, printf3.o(i._sputc))
+<BR><BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sprintf$3
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> printf3.o(i.__0sprintf$3)
+</UL><P>
 <H3>
 Undefined Global Symbols
 </H3><HR></body></html>

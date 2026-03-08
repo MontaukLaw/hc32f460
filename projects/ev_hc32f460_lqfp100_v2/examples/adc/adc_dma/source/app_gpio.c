@@ -74,4 +74,8 @@ void gpio_init(void)
     // 拉低
     GPIO_ResetPins(BL_LOW_POWER_PORT, BL_LOW_POWER_PIN);
 
+    // 设置输入引脚PB6
+    stcGpioInit.u16PinDir = PIN_DIR_IN;
+    GPIO_Init(BL_LINK_PORT, BL_LINK_PIN, &stcGpioInit);
+
 }

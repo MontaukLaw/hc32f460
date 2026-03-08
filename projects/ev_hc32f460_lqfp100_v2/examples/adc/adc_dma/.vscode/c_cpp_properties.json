@@ -11,13 +11,13 @@
 
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:\\LIN\\HC_MCU\\HC32F460_DDL_Rev3.3.0\\drivers\\cmsis\\Include",
-                "D:\\LIN\\HC_MCU\\HC32F460_DDL_Rev3.3.0\\drivers\\cmsis\\Device\\HDSC\\hc32f4xx\\include",
-                "D:\\LIN\\HC_MCU\\HC32F460_DDL_Rev3.3.0\\drivers\\hc32_ll_driver\\inc",
+                "${workspaceFolder}/../../../../../drivers/cmsis/Include",
+                "${workspaceFolder}/../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/include",
+                "${workspaceFolder}/../../../../../drivers/hc32_ll_driver/inc",
                 
                 // ARM GCC 标准库
                 "C:\\Program Files (x86)\\GNU Arm Embedded Toolchain\\10 2021.10\\arm-none-eabi\\include\\",
-                "C:\\Keil_v5\\ARM\\PACK\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include",
+                // "C:\\Keil_v5_527\\ARM\\PACK\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include",
                 // "D:\\work\\LEISAI\\HC32L13x_DDL_Rev2.2.0\\driver\\inc",
                 // "D:\\work\\LEISAI\\HC32L13x_DDL_Rev2.2.0\\mcu\\common"
 

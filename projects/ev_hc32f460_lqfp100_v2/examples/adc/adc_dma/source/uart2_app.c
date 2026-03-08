@@ -1,8 +1,10 @@
 #include "user_comm.h"
 
-static __IO en_flag_status_t m_enRxFrameEnd;
-static __IO uint16_t m_u16RxLen;
-static uint8_t m_au8RxBuf[APP_FRAME_LEN_MAX];
+__IO en_flag_status_t u2RxFrameEnd;
+__IO uint16_t u2_rx_len;
+__IO uint16_t u2_tx_len;
+uint8_t u2_rx_buf[APP_FRAME_LEN_MAX];
+uint8_t u2_tx_buf[APP_FRAME_LEN_MAX];
 
 /**
  * @brief  DMA transfer complete IRQ callback function.
@@ -11,8 +13,8 @@ static uint8_t m_au8RxBuf[APP_FRAME_LEN_MAX];
  */
 static void RX_DMA_TC_IrqCallback(void)
 {
-    m_enRxFrameEnd = SET;
-    m_u16RxLen = APP_FRAME_LEN_MAX;
+    u2RxFrameEnd = SET;
+    u4_rx_len = APP_FRAME_LEN_MAX;
 
     USART_FuncCmd(U2_USART_UNIT, USART_RX_TIMEOUT, DISABLE);
 
@@ -29,6 +31,22 @@ static void TX_DMA_TC_IrqCallback(void)
     USART_FuncCmd(U2_USART_UNIT, USART_INT_TX_CPLT, ENABLE);
 
     DMA_ClearTransCompleteStatus(U2_TX_DMA_UNIT, U2_TX_DMA_TC_FLAG);
+}
+
+void re_config_u2_rx_dma(void)
+{
+    DMA_ClearTransCompleteStatus(U2_RX_DMA_UNIT, U2_RX_DMA_TC_FLAG);
+
+    // 手动关通道
+    DMA_ChCmd(U2_RX_DMA_UNIT, U2_RX_DMA_CH, DISABLE);
+
+    // 重新设置传输计数 / 目的地址
+    DMA_SetSrcAddr(U2_RX_DMA_UNIT, U2_RX_DMA_CH, (uint32_t)&U2_USART_UNIT->RDR);
+    DMA_SetDestAddr(U2_RX_DMA_UNIT, U2_RX_DMA_CH, (uint32_t)u2_rx_buf);
+    DMA_SetTransCount(U2_RX_DMA_UNIT, U2_RX_DMA_CH, ARRAY_SZ(u2_rx_buf));
+
+    // 重新开通道
+    DMA_ChCmd(U2_RX_DMA_UNIT, U2_RX_DMA_CH, ENABLE);
 }
 
 /**
@@ -55,9 +73,9 @@ static int32_t u2_DMA_Config(void)
     (void)DMA_StructInit(&stcDmaInit);
     stcDmaInit.u32IntEn = DMA_INT_ENABLE;
     stcDmaInit.u32BlockSize = 1UL;
-    stcDmaInit.u32TransCount = ARRAY_SZ(m_au8RxBuf);
+    stcDmaInit.u32TransCount = ARRAY_SZ(u2_rx_buf);
     stcDmaInit.u32DataWidth = DMA_DATAWIDTH_8BIT;
-    stcDmaInit.u32DestAddr = (uint32_t)m_au8RxBuf;
+    stcDmaInit.u32DestAddr = (uint32_t)u2_rx_buf;
     stcDmaInit.u32SrcAddr = (uint32_t)(&U2_USART_UNIT->RDR);
     stcDmaInit.u32SrcAddrInc = DMA_SRC_ADDR_FIX;
     stcDmaInit.u32DestAddrInc = DMA_DEST_ADDR_INC;
@@ -80,7 +98,8 @@ static int32_t u2_DMA_Config(void)
 
         DMA_ReconfigLlpCmd(U2_RX_DMA_UNIT, U2_RX_DMA_CH, ENABLE);
         DMA_ReconfigCmd(U2_RX_DMA_UNIT, ENABLE);
-        AOS_SetTriggerEventSrc(U2_RX_DMA_RECONF_TRIG_SEL, U2_RX_DMA_RECONF_TRIG_EVT_SRC);
+
+        // AOS_SetTriggerEventSrc(U2_RX_DMA_RECONF_TRIG_SEL, U2_RX_DMA_RECONF_TRIG_EVT_SRC);
 
         stcIrqSignConfig.enIntSrc = U2_RX_DMA_TC_INT_SRC;
         stcIrqSignConfig.enIRQn = U2_RX_DMA_TC_IRQn;
@@ -101,10 +120,10 @@ static int32_t u2_DMA_Config(void)
     (void)DMA_StructInit(&stcDmaInit);
     stcDmaInit.u32IntEn = DMA_INT_ENABLE;
     stcDmaInit.u32BlockSize = 1UL;
-    stcDmaInit.u32TransCount = ARRAY_SZ(m_au8RxBuf);
+    stcDmaInit.u32TransCount = ARRAY_SZ(u2_rx_buf);
     stcDmaInit.u32DataWidth = DMA_DATAWIDTH_8BIT;
     stcDmaInit.u32DestAddr = (uint32_t)(&U2_USART_UNIT->TDR);
-    stcDmaInit.u32SrcAddr = (uint32_t)m_au8RxBuf;
+    stcDmaInit.u32SrcAddr = (uint32_t)u2_rx_buf;
     stcDmaInit.u32SrcAddrInc = DMA_SRC_ADDR_INC;
     stcDmaInit.u32DestAddrInc = DMA_DEST_ADDR_FIX;
     i32Ret = DMA_Init(U2_TX_DMA_UNIT, U2_TX_DMA_CH, &stcDmaInit);
@@ -207,13 +226,13 @@ static void USART_StopTimeoutTimer(CM_TMR0_TypeDef *TMR0x, uint32_t u32Ch)
  */
 static void USART_RxTimeout_IrqCallback(void)
 {
-    if (m_enRxFrameEnd != SET)
+    if (u2RxFrameEnd != SET)
     {
-        m_enRxFrameEnd = SET;
-        m_u16RxLen = APP_FRAME_LEN_MAX - (uint16_t)DMA_GetTransCount(U2_RX_DMA_UNIT, U2_RX_DMA_CH);
+        u2RxFrameEnd = SET;
+        u4_rx_len = APP_FRAME_LEN_MAX - (uint16_t)DMA_GetTransCount(U2_RX_DMA_UNIT, U2_RX_DMA_CH);
 
         /* Trigger for re-config USART RX DMA */
-        AOS_SW_Trigger();
+        // AOS_SW_Trigger();
     }
 
     USART_StopTimeoutTimer(U2_TMR0_UNIT, U2_TMR0_CH);
@@ -258,10 +277,16 @@ static void Uart2_SendByte(uint8_t b)
     USART_ClearStatus(U2_USART_UNIT, USART_FLAG_TX_CPLT);
 }
 
-void Uart2_SendStr(const char *s)
+void u2_send_str_sync(const char *s, uint16_t len)
 {
-    while (*s)
-        Uart2_SendByte((uint8_t)*s++);
+    USART_FuncCmd(U2_USART_UNIT, (USART_TX), ENABLE);
+
+    for (uint16_t i = 0; i < len; i++)
+    {
+        Uart2_SendByte((uint8_t)s[i]);
+    }
+
+    USART_FuncCmd(U2_USART_UNIT, (USART_TX), DISABLE);
 }
 
 void uart2_init(void)
@@ -338,13 +363,34 @@ void uart2_send_data(uint8_t *data, uint16_t len)
         return;
     }
 
-    memcpy(m_au8RxBuf, data, len);
+    u2_tx_len = len;
 
-    DMA_SetSrcAddr(U2_TX_DMA_UNIT, U2_TX_DMA_CH, (uint32_t)m_au8RxBuf);
+    memcpy(u2_tx_buf, data, len);
 
-    DMA_SetTransCount(U2_TX_DMA_UNIT, U2_TX_DMA_CH, len);
+    DMA_SetSrcAddr(U2_TX_DMA_UNIT, U2_TX_DMA_CH, (uint32_t)u2_tx_buf);
+
+    DMA_SetTransCount(U2_TX_DMA_UNIT, U2_TX_DMA_CH, u2_tx_len);
 
     (void)DMA_ChCmd(U2_TX_DMA_UNIT, U2_TX_DMA_CH, ENABLE);
 
     USART_FuncCmd(U2_USART_UNIT, USART_TX, ENABLE);
+}
+
+void u2_send_back(void)
+{
+    /* For test: send received data back. */
+    uart2_send_data(u4_rx_buf, u4_rx_len);
+}
+
+void u2_task(void)
+{
+    if (u2RxFrameEnd == SET)
+    {
+        /* Send back received data. */
+        u2_send_back();
+
+        re_config_u2_rx_dma();
+
+        u2RxFrameEnd = RESET;
+    }
 }

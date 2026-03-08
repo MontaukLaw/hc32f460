@@ -1,8 +1,11 @@
 #include "user_comm.h"
 
-static __IO en_flag_status_t m_enRxFrameEnd;
-static __IO uint16_t m_u16RxLen;
-static uint8_t m_au8RxBuf[APP_FRAME_LEN_MAX];
+__IO en_flag_status_t u4RxFrameEnd = RESET;
+// static __IO en_flag_status_t m_enRxFrameEnd;
+__IO uint16_t u4_rx_len;
+__IO uint16_t u4_tx_len;
+uint8_t u4_rx_buf[APP_FRAME_LEN_MAX];
+uint8_t u4_tx_buf[APP_FRAME_LEN_MAX];
 
 /**
  * @brief  DMA transfer complete IRQ callback function.
@@ -11,13 +14,31 @@ static uint8_t m_au8RxBuf[APP_FRAME_LEN_MAX];
  */
 static void RX_DMA_TC_IrqCallback(void)
 {
-    m_enRxFrameEnd = SET;
-    m_u16RxLen = APP_FRAME_LEN_MAX;
+
+    // m_enRxFrameEnd = SET;
+    u4RxFrameEnd = SET;
+
+    u4_rx_len = APP_FRAME_LEN_MAX;
 
     USART_FuncCmd(U4_USART_UNIT, USART_RX_TIMEOUT, DISABLE);
 
     DMA_ClearTransCompleteStatus(U4_RX_DMA_UNIT, U4_RX_DMA_TC_FLAG);
 }
+
+#if 0
+void u4_send_back(uint16_t tx_len)
+{
+    u4_tx_len = tx_len;
+
+    DMA_SetSrcAddr(U4_TX_DMA_UNIT, U4_TX_DMA_CH, (uint32_t)u4_tx_buf);
+
+    DMA_SetTransCount(U4_TX_DMA_UNIT, U4_TX_DMA_CH, u4_tx_len);
+
+    (void)DMA_ChCmd(U4_TX_DMA_UNIT, U4_TX_DMA_CH, ENABLE);
+
+    USART_FuncCmd(U4_USART_UNIT, USART_TX, ENABLE);
+}
+#endif
 
 /**
  * @brief  DMA transfer complete IRQ callback function.
@@ -29,6 +50,22 @@ static void TX_DMA_TC_IrqCallback(void)
     USART_FuncCmd(U4_USART_UNIT, USART_INT_TX_CPLT, ENABLE);
 
     DMA_ClearTransCompleteStatus(U4_TX_DMA_UNIT, U4_TX_DMA_TC_FLAG);
+}
+
+void re_config_u4_rx_dma(void)
+{
+    DMA_ClearTransCompleteStatus(U4_RX_DMA_UNIT, U4_RX_DMA_TC_FLAG);
+
+    // 手动关通道
+    DMA_ChCmd(U4_RX_DMA_UNIT, U4_RX_DMA_CH, DISABLE);
+
+    // 重新设置传输计数 / 目的地址
+    DMA_SetSrcAddr(U4_RX_DMA_UNIT, U4_RX_DMA_CH, (uint32_t)&U4_USART_UNIT->RDR);
+    DMA_SetDestAddr(U4_RX_DMA_UNIT, U4_RX_DMA_CH, (uint32_t)u4_rx_buf);
+    DMA_SetTransCount(U4_RX_DMA_UNIT, U4_RX_DMA_CH, ARRAY_SZ(u4_rx_buf));
+
+    // 重新开通道
+    DMA_ChCmd(U4_RX_DMA_UNIT, U4_RX_DMA_CH, ENABLE);
 }
 
 /**
@@ -55,9 +92,9 @@ static int32_t DMA_Config(void)
     (void)DMA_StructInit(&stcDmaInit);
     stcDmaInit.u32IntEn = DMA_INT_ENABLE;
     stcDmaInit.u32BlockSize = 1UL;
-    stcDmaInit.u32TransCount = ARRAY_SZ(m_au8RxBuf);
+    stcDmaInit.u32TransCount = ARRAY_SZ(u4_rx_buf);
     stcDmaInit.u32DataWidth = DMA_DATAWIDTH_8BIT;
-    stcDmaInit.u32DestAddr = (uint32_t)m_au8RxBuf;
+    stcDmaInit.u32DestAddr = (uint32_t)u4_rx_buf;
     stcDmaInit.u32SrcAddr = (uint32_t)(&U4_USART_UNIT->RDR);
     stcDmaInit.u32SrcAddrInc = DMA_SRC_ADDR_FIX;
     stcDmaInit.u32DestAddrInc = DMA_DEST_ADDR_INC;
@@ -80,7 +117,8 @@ static int32_t DMA_Config(void)
 
         DMA_ReconfigLlpCmd(U4_RX_DMA_UNIT, U4_RX_DMA_CH, ENABLE);
         DMA_ReconfigCmd(U4_RX_DMA_UNIT, ENABLE);
-        AOS_SetTriggerEventSrc(U4_RX_DMA_RECONF_TRIG_SEL, U4_RX_DMA_RECONF_TRIG_EVT_SRC);
+
+        // AOS_SetTriggerEventSrc(U4_RX_DMA_RECONF_TRIG_SEL, U4_RX_DMA_RECONF_TRIG_EVT_SRC);
 
         stcIrqSignConfig.enIntSrc = U4_RX_DMA_TC_INT_SRC;
         stcIrqSignConfig.enIRQn = U4_RX_DMA_TC_IRQn;
@@ -90,6 +128,8 @@ static int32_t DMA_Config(void)
         NVIC_SetPriority(stcIrqSignConfig.enIRQn, DDL_IRQ_PRIO_DEFAULT);
         NVIC_EnableIRQ(stcIrqSignConfig.enIRQn);
 
+        // 一个字节一个字节的搬运
+        // 把DMA触发源 绑定到 USART接收事件。
         AOS_SetTriggerEventSrc(U4_RX_DMA_TRIG_SEL, U4_RX_DMA_TRIG_EVT_SRC);
 
         DMA_Cmd(U4_RX_DMA_UNIT, ENABLE);
@@ -101,10 +141,10 @@ static int32_t DMA_Config(void)
     (void)DMA_StructInit(&stcDmaInit);
     stcDmaInit.u32IntEn = DMA_INT_ENABLE;
     stcDmaInit.u32BlockSize = 1UL;
-    stcDmaInit.u32TransCount = ARRAY_SZ(m_au8RxBuf);
+    stcDmaInit.u32TransCount = ARRAY_SZ(u4_rx_buf);
     stcDmaInit.u32DataWidth = DMA_DATAWIDTH_8BIT;
     stcDmaInit.u32DestAddr = (uint32_t)(&U4_USART_UNIT->TDR);
-    stcDmaInit.u32SrcAddr = (uint32_t)m_au8RxBuf;
+    stcDmaInit.u32SrcAddr = (uint32_t)u4_rx_buf;
     stcDmaInit.u32SrcAddrInc = DMA_SRC_ADDR_INC;
     stcDmaInit.u32DestAddrInc = DMA_DEST_ADDR_FIX;
     i32Ret = DMA_Init(U4_TX_DMA_UNIT, U4_TX_DMA_CH, &stcDmaInit);
@@ -207,10 +247,10 @@ static void USART_StopTimeoutTimer(CM_TMR0_TypeDef *TMR0x, uint32_t u32Ch)
  */
 static void USART_RxTimeout_IrqCallback(void)
 {
-    if (m_enRxFrameEnd != SET)
+    if (u4RxFrameEnd != SET)
     {
-        m_enRxFrameEnd = SET;
-        m_u16RxLen = APP_FRAME_LEN_MAX - (uint16_t)DMA_GetTransCount(U4_RX_DMA_UNIT, U4_RX_DMA_CH);
+        u4RxFrameEnd = SET;
+        u4_rx_len = APP_FRAME_LEN_MAX - (uint16_t)DMA_GetTransCount(U4_RX_DMA_UNIT, U4_RX_DMA_CH);
 
         /* Trigger for re-config USART RX DMA */
         AOS_SW_Trigger();
@@ -337,13 +377,20 @@ void uart4_send_data(uint8_t *data, uint16_t len)
         return;
     }
 
-    memcpy(m_au8RxBuf, data, len);
+    memcpy(u4_tx_buf, data, len);
+    u4_tx_len = len;
 
-    DMA_SetSrcAddr(U4_TX_DMA_UNIT, U4_TX_DMA_CH, (uint32_t)m_au8RxBuf);
+    DMA_SetSrcAddr(U4_TX_DMA_UNIT, U4_TX_DMA_CH, (uint32_t)u4_tx_buf);
 
-    DMA_SetTransCount(U4_TX_DMA_UNIT, U4_TX_DMA_CH, len);
+    DMA_SetTransCount(U4_TX_DMA_UNIT, U4_TX_DMA_CH, u4_tx_len);
 
     (void)DMA_ChCmd(U4_TX_DMA_UNIT, U4_TX_DMA_CH, ENABLE);
 
     USART_FuncCmd(U4_USART_UNIT, USART_TX, ENABLE);
 }
+
+void u4_task(void)
+{
+
+}
+

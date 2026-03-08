@@ -59,7 +59,7 @@ static void MPLLInit(void)
 // 5. 切换系统时钟源为PLL
 void init_clock(void)
 {
-    uint8_t i = 0U;
+    // uint8_t i = 0U;
 
     /* Register write unprotected for some required peripherals. */
     LL_PERIPH_WE(LL_PERIPH_EFM | LL_PERIPH_FCG | LL_PERIPH_GPIO | LL_PERIPH_PWC_CLK_RMU | LL_PERIPH_SRAM);

@@ -6,6 +6,7 @@ void all_led_off(void);
 
 void led_red_on(void);
 
+void led_task(void);
 
 #endif /* _LED_H_ */
 

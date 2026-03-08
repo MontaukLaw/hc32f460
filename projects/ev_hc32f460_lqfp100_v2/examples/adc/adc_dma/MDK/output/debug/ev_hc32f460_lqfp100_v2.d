@@ -2,8 +2,8 @@
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_aos.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h
-.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f4xx.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f460.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/cmsis/Include/core_cm4.h
@@ -29,4 +29,4 @@
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_sram.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_usart.h
 .\output\debug\ev_hc32f460_lqfp100_v2.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_utility.h
-.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\debug\ev_hc32f460_lqfp100_v2.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdio.h

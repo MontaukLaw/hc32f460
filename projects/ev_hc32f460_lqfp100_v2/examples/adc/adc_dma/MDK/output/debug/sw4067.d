@@ -1,11 +1,12 @@
 .\output\debug\sw4067.o: ..\source\sw4067.c
 .\output\debug\sw4067.o: ..\source\user_comm.h
-.\output\debug\sw4067.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\output\debug\sw4067.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\debug\sw4067.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\sw4067.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\string.h
+.\output\debug\sw4067.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\debug\sw4067.o: ..\source\main.h
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h
-.\output\debug\sw4067.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\sw4067.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stddef.h
 .\output\debug\sw4067.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f4xx.h
 .\output\debug\sw4067.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f460.h
 .\output\debug\sw4067.o: ../../../../../../drivers/cmsis/Include/core_cm4.h
@@ -36,7 +37,6 @@
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_tmra.h
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_usart.h
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_utility.h
-.\output\debug\sw4067.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\debug\sw4067.o: ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2_bsp.h
 .\output\debug\sw4067.o: ../../../../../../drivers/bsp/ev_hc32f460_lqfp100_v2/ev_hc32f460_lqfp100_v2.h
 .\output\debug\sw4067.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_i2c.h
@@ -49,3 +49,9 @@
 .\output\debug\sw4067.o: ..\source\sw4067.h
 .\output\debug\sw4067.o: ..\source\led.h
 .\output\debug\sw4067.o: ..\source\uart_app.h
+.\output\debug\sw4067.o: ..\source\bl.h
+.\output\debug\sw4067.o: ..\source\test.h
+.\output\debug\sw4067.o: ..\source\comm.h
+.\output\debug\sw4067.o: ..\source\app.h
+.\output\debug\sw4067.o: ..\source\app_adc.h
+.\output\debug\sw4067.o: ..\source\device_define.h

@@ -85,9 +85,6 @@ void delay_us(uint16_t us)
     {
     }
 
-    // while ((uint16_t)((uint16_t)TMRA_GetCountValue(DELAY_TMRA_UNIT) - start) < us)
-    // {
-    // }
 }
 
 void delay_ms(uint32_t ms)
@@ -97,3 +94,4 @@ void delay_ms(uint32_t ms)
         delay_us(1000U);
     }
 }
+

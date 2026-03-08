@@ -1,6 +1,7 @@
 #include "user_comm.h"
+
 // 0~15
-void set_ch(uint8_t ch)
+void set_adc_ch(uint8_t ch)
 {
     if (ch >= MAX_CHANNELS)
         return;
