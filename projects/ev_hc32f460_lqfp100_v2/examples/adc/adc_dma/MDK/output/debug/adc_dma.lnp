@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 ".\output\debug\startup_hc32f460.o"
 ".\output\debug\system_hc32f460.o"
 ".\output\debug\main.o"
@@ -14,6 +14,7 @@
 ".\output\debug\comm.o"
 ".\output\debug\app_adc.o"
 ".\output\debug\app.o"
+".\output\debug\algorithm.o"
 ".\output\debug\hc32_ll.o"
 ".\output\debug\hc32_ll_adc.o"
 ".\output\debug\hc32_ll_aos.o"

@@ -30,5 +30,6 @@
 #include "app.h"
 #include "app_adc.h"
 #include "device_define.h"
+#include "algorithm.h"
 
 #endif /* _USER_COMM_H_ */

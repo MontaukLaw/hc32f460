@@ -2,6 +2,8 @@
 
 uint8_t stop_u1 = 0;
 __IO uint8_t points_data[TOTAL_POINTS] = {0};
+__IO uint8_t points_data_after_proc[TOTAL_POINTS] = {0};
+
 float q_out[4] = {1.0f, 0.0f, 0.0f, 0.0f};
 uint8_t tx_data[OLD_FRAME_LEN] = {0};
 

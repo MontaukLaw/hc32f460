@@ -1,8 +1,8 @@
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/hc32_ll_driver/src/hc32_ll_interrupts.c
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_interrupts.h
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h
-.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stddef.h
-.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f4xx.h
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f460.h
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/cmsis/Include/core_cm4.h
@@ -14,4 +14,4 @@
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f4xx.h
 .\output\debug\hc32_ll_interrupts.o: ../source/hc32f4xx_conf.h
 .\output\debug\hc32_ll_interrupts.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_utility.h
-.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\debug\hc32_ll_interrupts.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

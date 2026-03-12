@@ -1,12 +1,12 @@
 .\output\debug\comm.o: ..\source\comm.c
 .\output\debug\comm.o: ..\source\user_comm.h
-.\output\debug\comm.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdint.h
-.\output\debug\comm.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\string.h
-.\output\debug\comm.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stdio.h
+.\output\debug\comm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\debug\comm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\output\debug\comm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\debug\comm.o: ..\source\main.h
 .\output\debug\comm.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll.h
 .\output\debug\comm.o: ../../../../../../drivers/hc32_ll_driver/inc/hc32_ll_def.h
-.\output\debug\comm.o: C:\Keil_v5_527\ARM\ARMCC\Bin\..\include\stddef.h
+.\output\debug\comm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\output\debug\comm.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f4xx.h
 .\output\debug\comm.o: ../../../../../../drivers/cmsis/Device/HDSC/hc32f4xx/Include/hc32f460.h
 .\output\debug\comm.o: ../../../../../../drivers/cmsis/Include/core_cm4.h
@@ -55,3 +55,4 @@
 .\output\debug\comm.o: ..\source\app.h
 .\output\debug\comm.o: ..\source\app_adc.h
 .\output\debug\comm.o: ..\source\device_define.h
+.\output\debug\comm.o: ..\source\algorithm.h

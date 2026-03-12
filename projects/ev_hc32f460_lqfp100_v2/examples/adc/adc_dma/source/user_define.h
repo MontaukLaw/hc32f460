@@ -176,6 +176,9 @@
 // 16个字节的MEMS数据
 #define OLD_FRAME_LEN (TOTAL_POINTS + 8 + 4 + 16)
 
-#define USE_PRESS 0
+#define USE_PRESS 1
+
+#define BY_COL 1
+#define BY_ROW 0
 
 #endif /* _USER_DEFINE_H_ */
